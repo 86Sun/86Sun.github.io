@@ -12,18 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="蒟蒻sxy的blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题  首先用一个问题来引入： 给出n个数，m次查询，每次查询一个区间[l,r]中第k大的值 sol  显然可以有一个O(nm)的暴力 那么我们考虑用线段树来做这道题 用裸的权值线段树可以支持询问数列中的第k大值，我们询问[l,r]中第k大的值，其实可以调用插入第l个数之前的权值线段树和插入第r个数之后的权值线段树，用它们的权值做差，其实就是一颗[l,r]的权值线段树 很容易想到可以构建n颗权值线">
+  <meta name="description" content="问题  首先用一个问题来引入： 给出n个数，m次查询，每次查询一个区间[l,r]中第k大的值">
 <meta name="keywords" content="数据结构,主席树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="主席树入门：静态主席树">
 <meta property="og:url" content="http://www.sxyoi.cn/2018/08/30/主席树入门：静态主席树/index.html">
 <meta property="og:site_name" content="蒟蒻sxy的blog">
-<meta property="og:description" content="问题  首先用一个问题来引入： 给出n个数，m次查询，每次查询一个区间[l,r]中第k大的值 sol  显然可以有一个O(nm)的暴力 那么我们考虑用线段树来做这道题 用裸的权值线段树可以支持询问数列中的第k大值，我们询问[l,r]中第k大的值，其实可以调用插入第l个数之前的权值线段树和插入第r个数之后的权值线段树，用它们的权值做差，其实就是一颗[l,r]的权值线段树 很容易想到可以构建n颗权值线">
+<meta property="og:description" content="问题  首先用一个问题来引入： 给出n个数，m次查询，每次查询一个区间[l,r]中第k大的值">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2018-08-30T11:11:33.906Z">
+<meta property="og:updated_time" content="2018-09-08T05:13:31.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="主席树入门：静态主席树">
-<meta name="twitter:description" content="问题  首先用一个问题来引入： 给出n个数，m次查询，每次查询一个区间[l,r]中第k大的值 sol  显然可以有一个O(nm)的暴力 那么我们考虑用线段树来做这道题 用裸的权值线段树可以支持询问数列中的第k大值，我们询问[l,r]中第k大的值，其实可以调用插入第l个数之前的权值线段树和插入第r个数之后的权值线段树，用它们的权值做差，其实就是一颗[l,r]的权值线段树 很容易想到可以构建n颗权值线">
+<meta name="twitter:description" content="问题  首先用一个问题来引入： 给出n个数，m次查询，每次查询一个区间[l,r]中第k大的值">
 
   <link rel="shortcut icon" href="" />
   <link rel="icon" href="" />
@@ -160,6 +160,7 @@
 
 <p>首先用一个问题来引入：</p>
 <p>给出n个数，m次查询，每次查询一个区间[l,r]中第k大的值</p>
+<a id="more"></a>
 <h2>sol</h2>
 
 <p>显然可以有一个O(nm)的暴力</p>
@@ -187,6 +188,24 @@
 
         
             <div class="prev-next">
+                
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/09/08/NOIp普及模拟赛1/" rel="prev" title="NOIp pj模拟赛1">
+                                    NOIp pj模拟赛1
+                                </a>
+                            </h4>
+                            
+                                <div class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>比赛
+                                    
+                                </div>
+                            
+                        </span>
+                    </section>
                 
                 
                     <section class="next">
@@ -227,6 +246,8 @@
     <div class="recommended_posts">
         <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
+            
+                <li><a href="http://www.sxyoi.cn/2018/09/08/NOIp普及模拟赛1/">NOIp pj模拟赛1</a></li>
             
                 <li><a href="http://www.sxyoi.cn/2018/08/30/博客迁移/">博客迁移</a></li>
             
@@ -313,7 +334,7 @@
 <section class="m_widget tagcloud">
     <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
     <div class='content'>
-        <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/日志/" style="font-size: 14px; color: #999">日志</a>
+        <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/日志/" style="font-size: 14px; color: #999">日志</a> <a href="/tags/比赛/" style="font-size: 14px; color: #999">比赛</a>
     </div>
 </section>
 

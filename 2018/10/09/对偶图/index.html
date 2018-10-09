@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: 动态规划 | 蒟蒻sxy的blog</title>
+  <title>初探对偶图 | 蒟蒻sxy的blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,13 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="蒟蒻sxy的blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="蒟蒻sxy的blog">
-<meta property="og:url" content="http://www.sxyoi.cn/tags/动态规划/index.html">
+  <meta name="description" content="平面图与对偶图及其在最大流最小割方面的简单应用">
+<meta name="keywords" content="图论,最小割,对偶图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初探对偶图">
+<meta property="og:url" content="http://www.sxyoi.cn/2018/10/09/对偶图/index.html">
 <meta property="og:site_name" content="蒟蒻sxy的blog">
+<meta property="og:description" content="平面图与对偶图及其在最大流最小割方面的简单应用">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2018-10-09T14:39:07.854Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蒟蒻sxy的blog">
+<meta name="twitter:title" content="初探对偶图">
+<meta name="twitter:description" content="平面图与对偶图及其在最大流最小割方面的简单应用">
 
   <link rel="shortcut icon" href="" />
   <link rel="icon" href="" />
@@ -133,142 +138,168 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-    <script>
-        window.subData= { title:'tag : 动态规划'}
-    </script>
-
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/10/09/[SCOI2005]互不侵犯-状压dp入门/">
-                
-                    SCOI2005-互不侵犯-状压dp入门
-                
-            </a>
-        </h2>
+        <article id="post-对偶图" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                初探对偶图
+            
+        </h1>
         <time>
-            2018-10-09 Tuesday
+            2018-10-09 Tuesday&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
 
     </section>
 
     <section class="article typo">
-        <p>状压dp入门题目</p>
-        
-            <div class="readmore">
-                <a href="/2018/10/09/[SCOI2005]互不侵犯-状压dp入门/" class="flat-box">READ MORE</a>
-            </div>
-        
 
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/动态规划/"><i class="fa fa-tag fa-fw"></i>&nbsp;动态规划</a>
-                
-                    <a href="/tags/状压dp/"><i class="fa fa-tag fa-fw"></i>&nbsp;状压dp</a>
-                
-            </div>
-        
-    </section>
-</article>
+        <div class="article-entry" itemprop="articleBody">
+            <p>平面图与对偶图及其在最大流最小割方面的简单应用</p>
+<a id="more"></a>
+<p>欧拉公式：</p>
+<pre><code>对于一张n个点，m条边的平面图，面数f=m-n+2
+</code></pre><p>平面图：</p>
+<pre><code>所有边只在顶点处相交
+</code></pre><p>对偶图：</p>
+<pre><code>对任一平面图，都存在其对偶图，平面图中每一个面对应其对偶图中的点
 
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/09/NOIp提高模拟赛1/">
-                
-                    NOIp提高模拟赛1
-                
-            </a>
-        </h2>
-        <time>
-            2018-09-09 Sunday
-        </time>
-        
+记原平面图为G，其对偶图为G* ， G*的边有两种情况，回边和非回边，任一边与G中的边有交点
+</code></pre><p>所以这东西有什么用？</p>
+<p>可以用来求最小割（最大流）！</p>
+<p>对偶图G<em> 中的一条路对应原图G中的一个割 ， 所以求G</em> 中的最短路就相当于求了G 中的最小割</p>
+<p>求最大流只会一个FF算法。。。复杂度并不会分析</p>
+<p>这样转化之后至少出现了方便分析复杂度(对我来说。。。)的算法–最短路</p>
+<p>所以求平面图最小割就可以建对偶图后跑一边最短路</p>
+<p>例题：</p>
+<p><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=1001" target="_blank" rel="noopener">bzoj 1001: [BeiJing2006]狼抓兔子</a></p>
+<p>f <em> 之间边的权值就是之前原来的点 f 之间与f </em> 的边交叉的边的权值。 </p>
+<p>一开始以为是裸的最小割。。。然而这样稠密的图好像并不能过orz</p>
+<p><del>代码</del></p>
+<h6>不存在的</h6>
 
-    </section>
+<hr>
+<h2>总结</h2>
 
-    <section class="article typo">
-        <h2>A</h2>
+<p>图论真的神奇啊orz</p>
+<p>虽然了解了对偶图和它最短路求最小割这一应用，但是感觉理解并不透彻。。。并不会证明。。。</p>
+<p>网络流还需要进一步学习</p>
+<p>最后还是先保全noip 2018成绩吧。。。毕竟高三了，之前并没参加过比赛，也就只能先争取1=敲开自招大门了。。。大学再战</p>
+<hr>
+<h2>参考文章</h2>
 
-<h2 class="subject-item-title">题目描述<br><a href="javascript:void(0);" class="icon-fullscreen js-full-question" title="全屏查看题目" target="_blank" rel="noopener"></a><br><a href="javascript:void(0);" class="icon-resize-small js-small-question" style="display:none;" title="收起全屏，编写代码" target="_blank" rel="noopener"></a><br></h2><br><div class="subject-describe"><br><div style="margin-bottom:10px;"><div>  小N得到了一个非常神奇的序列A。
-        
-            <div class="readmore">
-                <a href="/2018/09/09/NOIp提高模拟赛1/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/比赛/"><i class="fa fa-tag fa-fw"></i>&nbsp;比赛</a>
-                
-                    <a href="/tags/动态规划/"><i class="fa fa-tag fa-fw"></i>&nbsp;动态规划</a>
-                
-                    <a href="/tags/二分/"><i class="fa fa-tag fa-fw"></i>&nbsp;二分</a>
-                
-            </div>
-        
-    </section>
-</article>
+<ul>
+<li><a herf="https://www.cnblogs.com/abclzr/p/5033461.html">【BZOJ 1001】狼抓兔子 对偶图+SPFA</a></li>
+<li><a herf="https://blog.csdn.net/MaxMercer/article/details/77976666">关于平面图到对偶图的转化</a></li>
+<li><a herf="http://blog.sina.com.cn/s/blog_60707c0f01011fnn.html">对偶图的应用</a></li>
+</ul>
 
         </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/09/09/NOIp普及模拟赛1/">
-                
-                    NOIp pj模拟赛1
-                
-            </a>
-        </h2>
-        <time>
-            2018-09-09 Sunday
-        </time>
+
         
-
-    </section>
-
-    <section class="article typo">
-        <h2>A</h2>
-
-<div style="margin-bottom:10px;"><div>  小A刚考完大学考试。现在已经出了n门课的成绩，他想自己先算一下这些课的绩点是多少。设第i门课的他拿到的绩点是gpa<sub>i</sub>,而这门课的学分是sc<sub>i</sub>，那么他的总绩点用下面的公式计算： </div> <div>  <img src="https://uploadfiles.nowcoder.com/files/20180902/306603_1535894110324_equation?tex=%5Cfrac%7B%5Csum_%7Bi%3D1%7D%5En%20gpa_i%5Ctimes%20sc_i%7D%7B%5Csum_%7Bi%3D1%7D%5En%20sc_i%7D">,<br> </div> <div>  换言之，设S为<span>sc</span><sub>i</sub>的和，T为gpa<sub>i</sub>与sc<sub>i</sub>的乘积的和。那么小A的绩点就是T除以S的值。 </div></div>
-        
-            <div class="readmore">
-                <a href="/2018/09/09/NOIp普及模拟赛1/" class="flat-box">READ MORE</a>
+            <div class="article-tags tags">
+                
+                    <a href="/tags/图论/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;图论</a>
+                
+                    <a href="/tags/最小割/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;最小割</a>
+                
+                    <a href="/tags/对偶图/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;对偶图</a>
+                
             </div>
         
 
         
-            <div class="full-width auto-padding tags">
+            <div class="prev-next">
                 
-                    <a href="/tags/比赛/"><i class="fa fa-tag fa-fw"></i>&nbsp;比赛</a>
                 
-                    <a href="/tags/动态规划/"><i class="fa fa-tag fa-fw"></i>&nbsp;动态规划</a>
-                
-                    <a href="/tags/模拟/"><i class="fa fa-tag fa-fw"></i>&nbsp;模拟</a>
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/10/09/[SCOI2005]互不侵犯-状压dp入门/" rel="prev" title="SCOI2005-互不侵犯-状压dp入门">
+                                    SCOI2005-互不侵犯-状压dp入门
+                                </a>
+                            </h4>
+                            
+                                <div class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>动态规划
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>状压dp
+                                    
+                                </div>
+                            
+                        </span>
+                    </section>
                 
             </div>
         
+
     </section>
+
 </article>
 
-        </div>
-    
-</section>
+<br>
 
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="http://www.sxyoi.cn/2018/10/09/[SCOI2005]互不侵犯-状压dp入门/">SCOI2005-互不侵犯-状压dp入门</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/10/09/OI做题记录/">OI做题记录</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/09/09/NOIp提高模拟赛1/">NOIp提高模拟赛1</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/09/09/NOIp普及模拟赛1/">NOIp pj模拟赛1</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/08/30/主席树入门：静态主席树/">主席树入门：静态主席树</a></li>
+            
+        </ul>
+    </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: '初探对偶图',
+        tools: true
+    }
+</script>
 
 
       </div>
@@ -352,6 +383,13 @@
 
 
   
+    <section class="m_widget toc-wrapper">
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#undefined"><span class="toc-text">不存在的</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">参考文章</span></a>
+        </div>
+    </section>
+
 
 
 
@@ -413,6 +451,34 @@ if(!ROOT.endsWith('/'))ROOT += '/';
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "sRAHTozqmp2ADQXSFQiXN0Al-gzGzoHsz",
+                appKey: "gcHBRlFUuvgEFo0AhW0nXfSl",
+                placeholder: "快来评论吧~",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
 
 
   <script>setLoadingBarProgress(100);</script>

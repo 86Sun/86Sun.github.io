@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>博客迁移 | 蒟蒻sxy的blog</title>
+  <title>SCOI2005-互不侵犯-状压dp入门 | 蒟蒻sxy的blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,18 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="蒟蒻sxy的blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其他博客地址： csdn：https://blog.csdn.net/suxuyu01 Luogu：https://www.luogu.org/blog/lqyzsun/ 一般情况下不会再使用，如果在除此博客之外的地方发了我认为有价值的新文章也搬到这里来">
-<meta name="keywords" content="日志">
+  <meta name="description" content="状压dp入门题目">
+<meta name="keywords" content="动态规划,状压dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客迁移">
-<meta property="og:url" content="http://www.sxyoi.cn/2018/08/30/博客迁移/index.html">
+<meta property="og:title" content="SCOI2005-互不侵犯-状压dp入门">
+<meta property="og:url" content="http://www.sxyoi.cn/2018/10/09/[SCOI2005]互不侵犯-状压dp入门/index.html">
 <meta property="og:site_name" content="蒟蒻sxy的blog">
-<meta property="og:description" content="其他博客地址： csdn：https://blog.csdn.net/suxuyu01 Luogu：https://www.luogu.org/blog/lqyzsun/ 一般情况下不会再使用，如果在除此博客之外的地方发了我认为有价值的新文章也搬到这里来">
+<meta property="og:description" content="状压dp入门题目">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2018-09-08T16:53:23.488Z">
+<meta property="og:updated_time" content="2018-10-09T14:38:30.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客迁移">
-<meta name="twitter:description" content="其他博客地址： csdn：https://blog.csdn.net/suxuyu01 Luogu：https://www.luogu.org/blog/lqyzsun/ 一般情况下不会再使用，如果在除此博客之外的地方发了我认为有价值的新文章也搬到这里来">
+<meta name="twitter:title" content="SCOI2005-互不侵犯-状压dp入门">
+<meta name="twitter:description" content="状压dp入门题目">
 
   <link rel="shortcut icon" href="" />
   <link rel="icon" href="" />
@@ -138,15 +138,15 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-博客迁移" class="post white-box article-type-post" itemscope itemprop="blogPost">
+        <article id="post-[SCOI2005]互不侵犯-状压dp入门" class="post white-box article-type-post" itemscope itemprop="blogPost">
     <section class='meta'>
         <h1 class="title">
             
-                博客迁移
+                SCOI2005-互不侵犯-状压dp入门
             
         </h1>
         <time>
-            2018-08-30 Thursday&nbsp;&nbsp;
+            2018-10-09 Tuesday&nbsp;&nbsp;
             <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
@@ -156,17 +156,54 @@
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <p>其他博客地址：</p>
-<p>csdn：<a href="https://blog.csdn.net/suxuyu01" target="_blank" rel="noopener">https://blog.csdn.net/suxuyu01</a></p>
-<p>Luogu：<a href="https://www.luogu.org/blog/lqyzsun/" target="_blank" rel="noopener">https://www.luogu.org/blog/lqyzsun/</a></p>
-<p>一般情况下不会再使用，如果在除此博客之外的地方发了我认为有价值的新文章也搬到这里来</p>
+            <p>状压dp入门题目</p>
+<a id="more"></a>
+<h2>题目描述</h2><br><p>在N×N的棋盘里面放K个国王，使他们互不攻击，共有多少种摆放方案。国王能攻击到它上下左右，以及左上左下右上右下八个方向上附近的各一个格子，共8个格子。</p><br><p>注：数据有加强（2018/4/25）</p><br><h2>输入输出格式</h2>
 
+<p><strong>输入格式：</strong><br></p>
+<p></p><p></p><p>只有一行，包含两个数N，K （ 1 &lt;=N &lt;=9, 0 &lt;= K &lt;= N * N）</p><p></p><br><strong>输出格式：</strong><br><p></p>
+<p></p><p></p><p>所得的方案数</p><p></p><p></p>
+<p></p><h2>输入输出样例</h2><p></p>
+<p><div class="am-g"></div></p>
+<p><div class="am-u-md-6 copy-region"><br><strong>输入样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a></div></p>
+<pre>3 2
+</pre>
+
+<div class="am-u-md-6 copy-region">
+<strong>输出样例#1：</strong>
+<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
+<pre>16
+</pre>
+
+
+<hr>
+<h1>sol</h1>
+
+<p>状压dp的经典入门题目</p>
+<p>状态有三维（其实也可以滚动数组一下，不过我lazy了orz）</p>
+<p>一维表示列，一维表示已经放置的king数，一维表示上一列king的位置（二进制表示，也就是状压dp的核心内容？）</p>
+<p>然后转移枚举上一列的状态，judge一下然后转移就行了</p>
+<p>没开long long居然调了10分钟orz，是真的烦人</p>
+<p>复杂度O(nk2^{2n})，算出来好像1e9多，居然能过orz，还以为要加什么玄学优化来的</p>
+<hr>
+<h1>Code</h1>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,l,r) for(int i=l;i&lt;=r;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,l,r) for(int i=l;i&gt;=r;--i)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> dp[<span class="number">10</span>][<span class="number">82</span>][<span class="number">512</span>];</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="keyword">int</span> maxx;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> zt)</span><span class="comment">//judge if there is two kings that can attack each other</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp=<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">while</span>(temp&lt;=maxx)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((temp&amp;zt)==temp)</span><br><span class="line">         <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        temp&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span> zt)</span><span class="comment">//count 1 in zt</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(zt)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(zt&amp;<span class="number">1</span>)</span><br><span class="line">         ++ans;</span><br><span class="line">        zt&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k);</span><br><span class="line">    maxx=(<span class="number">1</span>&lt;&lt;n)<span class="number">-1</span>;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    rep(i,<span class="number">1</span>,<span class="number">9</span>)<span class="comment">//lie</span></span><br><span class="line">     rep(w,<span class="number">0</span>,k)<span class="comment">//tot num of kings</span></span><br><span class="line">      rep(j,<span class="number">0</span>,maxx)<span class="comment">//condition of this lie</span></span><br><span class="line">       rep(t,<span class="number">0</span>,maxx)<span class="comment">//condition of last lie</span></span><br><span class="line">        <span class="keyword">if</span>(judge(j|t)&amp;&amp;(!(j&amp;t))&amp;&amp;(w-count(j)&gt;=<span class="number">0</span>))</span><br><span class="line">         dp[i][w][j]+=dp[i<span class="number">-1</span>][w-count(j)][t];</span><br><span class="line">    rep(i,<span class="number">0</span>,maxx)</span><br><span class="line">     ans+=dp[n][k][i];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1>题外话</h1>
+
+<p>其实状压dp也不一定用二进制</p>
+<p>在qbxt做过一个，我用的三进制，虽然不是正解，但是可以A</p>
+<p>而且状压dp也可以用矩阵加速一波</p>
+</div>
         </div>
 
         
             <div class="article-tags tags">
                 
-                    <a href="/tags/日志/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;日志</a>
+                    <a href="/tags/动态规划/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;动态规划</a>
+                
+                    <a href="/tags/状压dp/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;状压dp</a>
                 
             </div>
         
@@ -178,22 +215,42 @@
                         <span class="art-item-left">
                             <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
                             <h4>
-                                <a href="/2018/08/30/主席树入门：静态主席树/" rel="prev" title="主席树入门：静态主席树">
-                                    主席树入门：静态主席树
+                                <a href="/2018/10/09/对偶图/" rel="prev" title="初探对偶图">
+                                    初探对偶图
                                 </a>
                             </h4>
                             
                                 <div class="tags">
                                     
-                                        <i class="fa fa-tag fa-fw"></i>数据结构
+                                        <i class="fa fa-tag fa-fw"></i>图论
                                     
-                                        <i class="fa fa-tag fa-fw"></i>主席树
+                                        <i class="fa fa-tag fa-fw"></i>最小割
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>对偶图
                                     
                                 </div>
                             
                         </span>
                     </section>
                 
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/10/09/OI做题记录/" rel="prev" title="OI做题记录">
+                                    OI做题记录
+                                </a>
+                            </h4>
+                            
+                                <div class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>日志
+                                    
+                                </div>
+                            
+                        </span>
+                    </section>
                 
             </div>
         
@@ -216,7 +273,7 @@
         <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
             
-                <li><a href="http://www.sxyoi.cn/2018/10/09/[SCOI2005]互不侵犯-状压dp入门/">SCOI2005-互不侵犯-状压dp入门</a></li>
+                <li><a href="http://www.sxyoi.cn/2018/10/09/对偶图/">初探对偶图</a></li>
             
                 <li><a href="http://www.sxyoi.cn/2018/10/09/OI做题记录/">OI做题记录</a></li>
             
@@ -258,7 +315,7 @@
 
 <script>
     window.subData = {
-        title: '博客迁移',
+        title: 'SCOI2005-互不侵犯-状压dp入门',
         tools: true
     }
 </script>
@@ -345,6 +402,13 @@
 
 
   
+    <section class="m_widget toc-wrapper">
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">输入输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">输入输出样例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">sol</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Code</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">题外话</span></a>
+        </div>
+    </section>
+
 
 
 

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Mayan游戏 | 蒟蒻sxy的blog</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="蒟蒻sxy的blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="大码力模拟。。。">
+<meta name="keywords" content="DFS,模拟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mayan游戏">
+<meta property="og:url" content="http://www.sxyoi.cn/2018/10/10/Mayan游戏/index.html">
+<meta property="og:site_name" content="蒟蒻sxy的blog">
+<meta property="og:description" content="大码力模拟。。。">
+<meta property="og:locale" content="Chinese">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/103.png">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/102.png">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/104.png">
+<meta property="og:updated_time" content="2018-10-10T14:36:11.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mayan游戏">
+<meta name="twitter:description" content="大码力模拟。。。">
+<meta name="twitter:image" content="https://cdn.luogu.org/upload/pic/103.png">
+
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script>
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				蒟蒻sxy的blog
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+						
+							<li>
+								<a class='flat-box nav-about' href='/'>
+									<i class="fa fa-home fa-fw"></i>
+									主页
+								</a>
+							</li>
+						
+							<li>
+								<a class='flat-box nav-home' href='/'>
+									<i class="fa fa-rss fa-fw"></i>
+									博客
+								</a>
+							</li>
+						
+							<li>
+								<a class='flat-box nav-archives' href='/archives'>
+									<i class="fa fa-archive fa-fw"></i>
+									归档
+								</a>
+							</li>
+						
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><i class="fa fa-search fa-fw"></i></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><i class="fa fa-navicon fa-fw"></i></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><i class="fa fa-comments fa-fw"></i></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><i class="fa fa-arrow-up fa-fw"></i></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><i class="fa fa-list-ul fa-fw"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">蒟蒻sxy的blog</div>
+		<nav>
+			
+				<a href="/" class="nav-about nav">
+					<i class="fa fa-home"></i>
+					主页
+				</a>
+			
+				<a href="/" class="nav-home nav">
+					<i class="fa fa-rss"></i>
+					博客
+				</a>
+			
+				<a href="/archives" class="nav-archives nav">
+					<i class="fa fa-archive"></i>
+					归档
+				</a>
+			
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-Mayan游戏" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
+            
+                Mayan游戏
+            
+        </h1>
+        <time>
+            2018-10-10 Wednesday&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </time>
+        
+
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>大码力模拟。。。</p>
+<a id="more"></a>
+<div class="am-u-md-8 lg-right" name="problemleft"><br><div class="lg-content-left"><br><div class="lg-article am-g"><br><h2>题目描述</h2><br><p><code>Mayan puzzle</code>是最近流行起来的一个游戏。游戏界面是一个$ 7$ 行$ \times 5 $列的棋盘，上面堆放着一些方块，方块不能悬空堆放，即方块必须放在最下面一行，或者放在其他方块之上。游戏通关是指在规定的步数内消除所有的方块，消除方块的规则如下：</p><br><p>1 、每步移动可以且仅可以沿横向（即向左或向右）拖动某一方块一格：当拖动这一方块时，如果拖动后到达的位置（以下称目标位置）也有方块，那么这两个方块将交换位置（参见输入输出样例说明中的图$6 $到图$7$ ）；如果目标位置上没有方块，那么被拖动的方块将从原来的竖列中抽出，并从目标位置上掉落（直到不悬空，参见下面图1 和图2）；</p><br><p><img src="https://cdn.luogu.org/upload/pic/103.png" alt=""> </p><br><p>2 、任一时刻，如果在一横行或者竖列上有连续三个或者三个以上相同颜色的方块，则它们将立即被消除（参见图1 到图3）。</p><br><p><img src="https://cdn.luogu.org/upload/pic/102.png" alt=""> </p><br><p>注意：</p><br><p>a) 如果同时有多组方块满足消除条件，几组方块会同时被消除（例如下面图$4$ ，三个颜色为$1$ 的方块和三个颜色为 $2$ 的方块会同时被消除，最后剩下一个颜色为$ 2 $的方块）。</p><br><p>b) 当出现行和列都满足消除条件且行列共享某个方块时，行和列上满足消除条件的所有方块会被同时消除（例如下面图5 所示的情形，5 个方块会同时被消除）。</p><br><p>3 、方块消除之后，消除位置之上的方块将掉落，掉落后可能会引起新的方块消除。注意：掉落的过程中将不会有方块的消除。</p><br><p>上面图1 到图 3 给出了在棋盘上移动一块方块之后棋盘的变化。棋盘的左下角方块的坐标为（0, 0 ），将位于（3, 3 ）的方块向左移动之后，游戏界面从图 1 变成图 2 所示的状态，此时在一竖列上有连续三块颜色为4 的方块，满足消除条件，消除连续3 块颜色为4 的方块后，上方的颜色为3 的方块掉落，形成图 3 所示的局面。</p><br><h2>输入输出格式</h2><br><strong>输入格式：</strong><br><br><p></p><p>共 6 行。</p><br><p>第一行为一个正整数$n $，表示要求游戏通关的步数。</p><br><p>接下来的$5 $行，描述$ 7 \times 5$ 的游戏界面。每行若干个整数，每两个整数之间用一个空格隔开，每行以一个$0$ 结束，自下向上表示每竖列方块的颜色编号（颜色不多于$10$种，从$1 $开始顺序编号，相同数字表示相同颜色）。</p><br><p>输入数据保证初始棋盘中没有可以消除的方块。</p><p></p><br><strong>输出格式：</strong><br><br><p></p><p>如果有解决方案，输出$n$行，每行包含 $3$ 个整数$x,y,g$，表示一次移动，每两个整数之间用一个空格隔开，其中$(x ,y)$表示要移动的方块的坐标，$g$ 表示移动的方向，$1$ 表示向右移动，$-1$表示向左移动。注意：多组解时，按照$x$为第一关健字，$y$为第二关健字，$1$优先于$-1$ ，给出一组字典序最小的解。游戏界面左下角的坐标为$(0 ,0)$。</p><br><p>如果没有解决方案，输出一行，包含一个整数$-1$。</p><p></p><br><h2>输入输出样例</h2><br><div class="am-g"><br><div class="am-u-md-6 copy-region"><br><strong>输入样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a><br><pre>3<br>1 0<br>2 1 0<br>2 3 4 0<br>3 1 0<br>2 4 3 4 0</pre><br></div><br><div class="am-u-md-6 copy-region"><br><strong>输出样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a><br><pre>2 1 1<br>3 1 1<br>3 0 1</pre><br></div><br></div><br><h2>说明</h2><br><p>【输入输出样例说明】</p><br><p>按箭头方向的顺序分别为图$6$到图$11$</p><br><p><img src="https://cdn.luogu.org/upload/pic/104.png" alt=""> </p><br><p>样例输入的游戏局面如上面第一个图片所示，依次移动的三步是：$(2 ,1 )$处的方格向右移动，$(3,1)$处的方格向右移动，$(3,0)$处的方格向右移动，最后可以将棋盘上所有方块消除。</p><br><p>【数据范围】</p><br><p>对于$30\%$的数据，初始棋盘上的方块都在棋盘的最下面一行；</p><br><p>对于$100\%$的数据，$0 &lt; n≤5$ 。</p><br><p>noip2011提高组day1第3题</p><br></div><br><div class="lg-article-sub am-g" id="sub"></div><br></div><br></div>
+
+
+
+<hr>
+<h1>sol</h1>
+
+<p>大模拟+dfs orz</p>
+<p>存图用的栈开小了（其实是没有删掉没用的图）调了一上午orz</p>
+<p>其实题目只有几个核心操作</p>
+<p>移动 move()</p>
+<p>消除 del()</p>
+<p>下落 down()</p>
+<p>检验是否有块可以消除 judge()</p>
+<p>基本上就是一道纯代码能力题。。。</p>
+<p>搜索直接按字典序优先的顺序来搜，这样找到的第一个答案就是题目要求的</p>
+<p>消除我是维护了一个栈，在检验到能消除的地方之后压入位置，长度和消除方向，都从左向右，从下向上</p>
+<p>而且注意到下落之后可能还会引起新的消除，所以把judge()和down()做成了两个bool型的</p>
+<p>然后再加一点小的剪枝就够了，毕竟3s</p>
+<p>其实写这种码力题还是挺有趣的orzzzzzzzzz</p>
+<p>但是不知道为什么在dfs后面加一句</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--cnt;</span><br></pre></td></tr></table></figure>
+<p>就会跑不出来，玄学</p>
+<p>模拟题没什么好说的，总结一下代码里的sb错误：</p>
+<pre><code>存图栈开小了，或者说搜完之后没有退栈
+
+搜索没判断是否在终态成功消除完了，然后就有好几个输出。。。
+</code></pre><hr>
+<h1>Code</h1>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,l,r) for(int i=l;i&lt;=r;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,l,r) for(int i=l;i&gt;=r;--i)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="keyword">int</span> mapp[<span class="number">500000</span>][<span class="number">8</span>][<span class="number">6</span>];</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> step[<span class="number">500000</span>],n;</span><br><span class="line"><span class="keyword">short</span> <span class="keyword">int</span> ansx[<span class="number">6</span>],ansy[<span class="number">6</span>],ansg[<span class="number">6</span>];</span><br><span class="line"><span class="keyword">bool</span> solved=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="keyword">int</span> delx_que[<span class="number">1001</span>],dely_que[<span class="number">1001</span>],dell_que[<span class="number">1001</span>],delqt=<span class="number">0</span>;<span class="comment">//del_xpos_stack , del_ypos_stack , del_length_stack , del_stack_top</span></span><br><span class="line"><span class="keyword">bool</span> deld_que[<span class="number">1001</span>];<span class="comment">//del_direction_queue 0-&gt;up 1-&gt;right</span></span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">8</span>][<span class="number">6</span>][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">bool</span> dir,<span class="keyword">const</span> <span class="keyword">int</span> &amp;w)</span><span class="comment">//change the pos of block , dir:0-&gt;left 1-&gt;right , w:last map</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memcpy</span>(mapp[++cnt],mapp[w],<span class="keyword">sizeof</span> mapp[w]);<span class="comment">//copy the pre map</span></span><br><span class="line">	<span class="keyword">if</span>(dir)<span class="comment">//move to right</span></span><br><span class="line">	 swap(mapp[cnt][x][y],mapp[cnt][x][y+<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">else</span><span class="comment">//move to left</span></span><br><span class="line">	 swap(mapp[cnt][x][y],mapp[cnt][x][y<span class="number">-1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;x)</span><span class="comment">//operate in the del_stack</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(delqt)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(deld_que[delqt])<span class="comment">//del_right</span></span><br><span class="line">		&#123;</span><br><span class="line">			rep(j,dely_que[delqt],dely_que[delqt]+dell_que[delqt]<span class="number">-1</span>)</span><br><span class="line">			 mapp[x][delx_que[delqt]][j]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span><span class="comment">//del_up</span></span><br><span class="line">		&#123;</span><br><span class="line">			rep(i,delx_que[delqt],delx_que[delqt]+dell_que[delqt]<span class="number">-1</span>)</span><br><span class="line">			 mapp[x][i][dely_que[delqt]]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		--delqt;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">down</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;x)</span><span class="comment">//blocks which are flying fall down to the ground , from bottom to the top</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> sb=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> tx;</span><br><span class="line">	rep(i,<span class="number">2</span>,<span class="number">7</span>)</span><br><span class="line">	 rep(j,<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">	 &#123;</span><br><span class="line">	 	<span class="keyword">if</span>(mapp[x][i][j]&amp;&amp;!mapp[x][i<span class="number">-1</span>][j])</span><br><span class="line">	 	&#123;</span><br><span class="line">	 		sb=<span class="number">1</span>;</span><br><span class="line">	 		tx=i;</span><br><span class="line">	 		<span class="keyword">while</span>(tx&gt;<span class="number">1</span>&amp;&amp;!mapp[x][tx<span class="number">-1</span>][j])<span class="comment">//fall to ground</span></span><br><span class="line">	 		&#123;</span><br><span class="line">	 			swap(mapp[x][tx][j],mapp[x][tx<span class="number">-1</span>][j]);</span><br><span class="line">	 			--tx;</span><br><span class="line">	 		&#125;</span><br><span class="line">	 	&#125;</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">return</span> sb;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;x)</span><span class="comment">//judge if there is any block is del_able &amp; del it ,after del them ,drop</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> sb;</span><br><span class="line">	<span class="keyword">int</span> temp,tx,ty;</span><br><span class="line">	<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span> vis);</span><br><span class="line">	rep(i,<span class="number">1</span>,<span class="number">7</span>)</span><br><span class="line">	 rep(j,<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">	 &#123;</span><br><span class="line">	 	<span class="keyword">if</span>(!mapp[x][i][j])</span><br><span class="line">	 	 <span class="keyword">continue</span>;</span><br><span class="line">	 	temp=<span class="number">1</span>;</span><br><span class="line">	 	tx=i;ty=j;</span><br><span class="line">	 	<span class="keyword">while</span>(ty+<span class="number">1</span>&lt;=<span class="number">5</span>&amp;&amp;mapp[x][tx][ty]==mapp[x][tx][ty+<span class="number">1</span>]&amp;&amp;<span class="number">1</span><span class="comment">/*!vis[tx][ty+1][1]*/</span>)<span class="comment">//right</span></span><br><span class="line">	 	&#123;</span><br><span class="line">	 		++temp;++ty; </span><br><span class="line">	 		<span class="comment">//vis[tx][ty][1]=1;</span></span><br><span class="line">	 		<span class="comment">//vis[tx][ty+1][1]=1;</span></span><br><span class="line">	 	&#125;</span><br><span class="line">	 	<span class="keyword">if</span>(temp&gt;=<span class="number">3</span>)</span><br><span class="line">	 	&#123;</span><br><span class="line">	 		++delqt;</span><br><span class="line">	 		delx_que[delqt]=i;</span><br><span class="line">	 		dely_que[delqt]=j;</span><br><span class="line">	 		deld_que[delqt]=<span class="number">1</span>;</span><br><span class="line">	 		dell_que[delqt]=temp;</span><br><span class="line">	 	&#125;</span><br><span class="line">	 	temp=<span class="number">1</span>;</span><br><span class="line">	 	tx=i;ty=j;</span><br><span class="line">	 	<span class="keyword">while</span>(tx+<span class="number">1</span>&lt;=<span class="number">7</span>&amp;&amp;mapp[x][tx][ty]==mapp[x][tx+<span class="number">1</span>][ty]&amp;&amp;<span class="number">1</span><span class="comment">/*!vis[tx][ty+1][0]*/</span>)<span class="comment">//up</span></span><br><span class="line">	 	&#123;</span><br><span class="line">	 		++temp;++tx;</span><br><span class="line">	 		<span class="comment">//vis[tx][ty][0]=1;</span></span><br><span class="line">	 		<span class="comment">//vis[tx+1][ty][0]=1;</span></span><br><span class="line">	 	&#125;</span><br><span class="line">	 	<span class="keyword">if</span>(temp&gt;=<span class="number">3</span>)</span><br><span class="line">	 	&#123;</span><br><span class="line">	 		++delqt;</span><br><span class="line">	 		delx_que[delqt]=i;</span><br><span class="line">	 		dely_que[delqt]=j;</span><br><span class="line">	 		deld_que[delqt]=<span class="number">0</span>;</span><br><span class="line">	 		dell_que[delqt]=temp;</span><br><span class="line">	 	&#125;</span><br><span class="line">	 &#125;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;delqt&lt;&lt;'\n';</span></span><br><span class="line">	del(x);</span><br><span class="line">	sb=down(x);</span><br><span class="line">	<span class="keyword">return</span> sb;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)</span><br><span class="line">	 <span class="built_in">cout</span>&lt;&lt;ansx[i]&lt;&lt;<span class="string">' '</span>&lt;&lt;ansy[i]&lt;&lt;<span class="string">' '</span>&lt;&lt;ansg[i]&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span><span class="comment">//read the natural map</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	rep(i,<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		rep(j,<span class="number">1</span>,<span class="number">9</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;mapp[<span class="number">0</span>][j][i];</span><br><span class="line">			<span class="keyword">if</span>(!mapp[<span class="number">0</span>][j][i])</span><br><span class="line">			 <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> depth,<span class="keyword">int</span> x)</span><span class="comment">//dfs by dictionary num , if there is a sol , just print it . </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(judge(x));<span class="comment">//fall may be cause to successfully del</span></span><br><span class="line">	<span class="keyword">if</span>(depth==n)</span><br><span class="line">	&#123;</span><br><span class="line">		rep(i,<span class="number">1</span>,<span class="number">7</span>)</span><br><span class="line">		 rep(j,<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">		  <span class="keyword">if</span>(mapp[x][i][j])</span><br><span class="line">		  &#123;</span><br><span class="line">		  	--cnt;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		  &#125;</span><br><span class="line">		print();</span><br><span class="line">		solved=<span class="number">1</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	rep(j,<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">	 rep(i,<span class="number">1</span>,<span class="number">7</span>)</span><br><span class="line">	 &#123;</span><br><span class="line">	 	<span class="keyword">if</span>(mapp[x][i][j])<span class="comment">//if there is a block</span></span><br><span class="line">	 	&#123;</span><br><span class="line">		 	ansx[depth+<span class="number">1</span>]=j<span class="number">-1</span>;</span><br><span class="line">	 		ansy[depth+<span class="number">1</span>]=i<span class="number">-1</span>;<span class="comment">//only move to suqare area on the left &amp; the pos on the right</span></span><br><span class="line">	 		<span class="keyword">if</span>(j&lt;<span class="number">5</span>)<span class="comment">//move to right</span></span><br><span class="line">	 		&#123;</span><br><span class="line">	 			ansg[depth+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	 			move(i,j,<span class="number">1</span>,x);</span><br><span class="line">	 			dfs(depth+<span class="number">1</span>,cnt);</span><br><span class="line">	 			<span class="keyword">if</span>(solved)</span><br><span class="line">	 			 <span class="keyword">return</span>;</span><br><span class="line">	 		&#125;</span><br><span class="line">	 		<span class="keyword">if</span>(j&gt;<span class="number">1</span>&amp;&amp;!mapp[x][i][j<span class="number">-1</span>])<span class="comment">//move to left</span></span><br><span class="line">	 		&#123;</span><br><span class="line">	 			ansg[depth+<span class="number">1</span>]=<span class="number">-1</span>;</span><br><span class="line">	 			move(i,j,<span class="number">0</span>,x);</span><br><span class="line">	 			dfs(depth+<span class="number">1</span>,cnt);</span><br><span class="line">	 			<span class="keyword">if</span>(solved)</span><br><span class="line">	 			 <span class="keyword">return</span>;</span><br><span class="line">	 		&#125;</span><br><span class="line">	 	&#125;</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	read();</span><br><span class="line">	dfs(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">if</span>(!solved)</span><br><span class="line">	 <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <div class="article-tags tags">
+                
+                    <a href="/tags/DFS/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;DFS</a>
+                
+                    <a href="/tags/模拟/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;模拟</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/10/10/CF437C The Child and Toy/" rel="prev" title="CF437C The Child and Toy">
+                                    CF437C The Child and Toy
+                                </a>
+                            </h4>
+                            
+                                <div class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>贪心
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>图论
+                                    
+                                </div>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/10/09/对偶图/" rel="prev" title="初探对偶图">
+                                    初探对偶图
+                                </a>
+                            </h4>
+                            
+                                <div class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>图论
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>最小割
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>对偶图
+                                    
+                                </div>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="http://www.sxyoi.cn/2018/10/10/bzoj 2456 mode/">bzoj 2456 mode</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/10/10/CF437C The Child and Toy/">CF437C The Child and Toy</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/10/09/对偶图/">初探对偶图</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/10/09/[SCOI2005]互不侵犯-状压dp入门/">SCOI2005-互不侵犯-状压dp入门</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/10/09/OI做题记录/">OI做题记录</a></li>
+            
+        </ul>
+    </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+
+            
+
+            
+
+                
+
+                
+
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Mayan游戏',
+        tools: true
+    }
+</script>
+
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+    <div class='header'>
+        
+            <img class='avatar waves-image' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535640968148&di=65bd3b54f8565e24c42d3d07ffb3403c&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Fface%2F174bb9998294d4c01d75776c52a4afb6ee897a56.jpg' />
+        
+    </div>
+    <div class='content'>
+        
+        <div>
+            <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
+            
+                Talk is cheap
+            
+        </div>
+    </div>
+    
+        <div class="social-wrapper">
+          
+            
+                <a href="https://github.com/86Sun" class="social github"
+                    target="_blank" rel="external">
+                <i class="fa fa-github fa-fw"></i>
+                </a>
+            
+          
+            
+                <a href="https://music.163.com/#/user/home?id=280544847" class="social music"
+                    target="_blank" rel="external">
+                <i class="fa fa-music fa-fw"></i>
+                </a>
+            
+          
+        </div>
+    
+
+</section>
+
+
+  
+<section class="m_widget tagcloud">
+    <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
+    <div class='content'>
+        <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/二分/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/动态规划/" style="font-size: 24px; color: #555">动态规划</a> <a href="/tags/图论/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/对偶图/" style="font-size: 14px; color: #999">对偶图</a> <a href="/tags/数学/" style="font-size: 14px; color: #999">数学</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/日志/" style="font-size: 19px; color: #777">日志</a> <a href="/tags/最小割/" style="font-size: 14px; color: #999">最小割</a> <a href="/tags/模拟/" style="font-size: 24px; color: #555">模拟</a> <a href="/tags/比赛/" style="font-size: 19px; color: #777">比赛</a> <a href="/tags/状压dp/" style="font-size: 14px; color: #999">状压dp</a> <a href="/tags/神奇操作/" style="font-size: 14px; color: #999">神奇操作</a> <a href="/tags/记忆化搜索/" style="font-size: 14px; color: #999">记忆化搜索</a> <a href="/tags/贪心/" style="font-size: 14px; color: #999">贪心</a>
+    </div>
+</section>
+
+
+
+  
+    <section class='m_widget music'>
+    <div class='header'><i class="fa fa-music fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
+    <div class='content'>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=386136148&auto=0&height=450"></iframe>
+    </div>
+    </section>
+
+
+
+  
+    <section class="m_widget toc-wrapper">
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">输入输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">输入输出样例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">sol</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Code</span></a>
+        </div>
+    </section>
+
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+    <div class="social-wrapper">
+      
+        
+            <a href="https://github.com/86Sun" class="social github flat-box"
+                target="_blank" rel="external">
+            <i class="fa fa-github fa-fw"></i>
+            </a>
+        
+      
+        
+            <a href="https://music.163.com/#/user/home?id=280544847" class="social music flat-box"
+                target="_blank" rel="external">
+            <i class="fa fa-music fa-fw"></i>
+            </a>
+        
+      
+    </div>
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material-X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+  <script>setLoadingBarProgress(80);</script>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+var ALGOLIA_API_KEY = "";
+var ALGOLIA_APP_ID = "";
+var ALGOLIA_INDEX_NAME = "";
+var AZURE_SERVICE_NAME = "";
+var AZURE_INDEX_NAME = "";
+var AZURE_QUERY_KEY = "";
+var BAIDU_API_ID = "";
+var SEARCH_SERVICE = "hexo";
+var ROOT = "/"||"/";
+if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+    
+    
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "sRAHTozqmp2ADQXSFQiXN0Al-gzGzoHsz",
+                appKey: "gcHBRlFUuvgEFo0AhW0nXfSl",
+                placeholder: "快来评论吧~",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
+    
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

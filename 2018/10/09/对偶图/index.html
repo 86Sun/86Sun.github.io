@@ -160,35 +160,35 @@
 <a id="more"></a>
 <p>欧拉公式：</p>
 <pre><code>对于一张n个点，m条边的平面图，面数f=m-n+2
-</code></pre><p>平面图：</p>
+</code></pre>
+<p>平面图：</p>
 <pre><code>所有边只在顶点处相交
-</code></pre><p>对偶图：</p>
+</code></pre>
+<p>对偶图：</p>
 <pre><code>对任一平面图，都存在其对偶图，平面图中每一个面对应其对偶图中的点
 
 记原平面图为G，其对偶图为G* ， G*的边有两种情况，回边和非回边，任一边与G中的边有交点
-</code></pre><p>所以这东西有什么用？</p>
+</code></pre>
+<p>所以这东西有什么用？</p>
 <p>可以用来求最小割（最大流）！</p>
-<p>对偶图G<em> 中的一条路对应原图G中的一个割 ， 所以求G</em> 中的最短路就相当于求了G 中的最小割</p>
+<p>对偶图G* 中的一条路对应原图G中的一个割 ， 所以求G* 中的最短路就相当于求了G 中的最小割</p>
 <p>求最大流只会一个FF算法。。。复杂度并不会分析</p>
 <p>这样转化之后至少出现了方便分析复杂度(对我来说。。。)的算法–最短路</p>
 <p>所以求平面图最小割就可以建对偶图后跑一边最短路</p>
 <p>例题：</p>
 <p><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=1001" target="_blank" rel="noopener">bzoj 1001: [BeiJing2006]狼抓兔子</a></p>
-<p>f <em> 之间边的权值就是之前原来的点 f 之间与f </em> 的边交叉的边的权值。 </p>
+<p>f * 之间边的权值就是之前原来的点 f 之间与f * 的边交叉的边的权值。</p>
 <p>一开始以为是裸的最小割。。。然而这样稠密的图好像并不能过orz</p>
-<p><del>代码</del></p>
+<p><s>代码</s></p>
 <h6>不存在的</h6>
-
 <hr>
 <h2>总结</h2>
-
 <p>图论真的神奇啊orz</p>
 <p>虽然了解了对偶图和它最短路求最小割这一应用，但是感觉理解并不透彻。。。并不会证明。。。</p>
 <p>网络流还需要进一步学习</p>
 <p>最后还是先保全noip 2018成绩吧。。。毕竟高三了，之前并没参加过比赛，也就只能先争取1=敲开自招大门了。。。大学再战</p>
 <hr>
 <h2>参考文章</h2>
-
 <ul>
 <li><a herf="https://www.cnblogs.com/abclzr/p/5033461.html">【BZOJ 1001】狼抓兔子 对偶图+SPFA</a></li>
 <li><a herf="https://blog.csdn.net/MaxMercer/article/details/77976666">关于平面图到对偶图的转化</a></li>
@@ -367,7 +367,7 @@
 <section class="m_widget tagcloud">
     <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
     <div class='content'>
-        <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/二分/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/动态规划/" style="font-size: 24px; color: #555">动态规划</a> <a href="/tags/图论/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/对偶图/" style="font-size: 14px; color: #999">对偶图</a> <a href="/tags/数学/" style="font-size: 14px; color: #999">数学</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/日志/" style="font-size: 19px; color: #777">日志</a> <a href="/tags/最小割/" style="font-size: 14px; color: #999">最小割</a> <a href="/tags/模拟/" style="font-size: 24px; color: #555">模拟</a> <a href="/tags/比赛/" style="font-size: 19px; color: #777">比赛</a> <a href="/tags/状压dp/" style="font-size: 14px; color: #999">状压dp</a> <a href="/tags/神奇操作/" style="font-size: 14px; color: #999">神奇操作</a> <a href="/tags/记忆化搜索/" style="font-size: 14px; color: #999">记忆化搜索</a> <a href="/tags/贪心/" style="font-size: 14px; color: #999">贪心</a>
+        <a href="/tags/DFS/" style="font-size: 14px; color: #999">DFS</a> <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/二分/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/动态规划/" style="font-size: 20.67px; color: #6c6c6c">动态规划</a> <a href="/tags/图论/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/对偶图/" style="font-size: 14px; color: #999">对偶图</a> <a href="/tags/数学/" style="font-size: 17.33px; color: #828282">数学</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/日志/" style="font-size: 17.33px; color: #828282">日志</a> <a href="/tags/最小割/" style="font-size: 14px; color: #999">最小割</a> <a href="/tags/最小生成树/" style="font-size: 14px; color: #999">最小生成树</a> <a href="/tags/模拟/" style="font-size: 24px; color: #555">模拟</a> <a href="/tags/比赛/" style="font-size: 17.33px; color: #828282">比赛</a> <a href="/tags/状压dp/" style="font-size: 14px; color: #999">状压dp</a> <a href="/tags/神奇操作/" style="font-size: 14px; color: #999">神奇操作</a> <a href="/tags/记忆化搜索/" style="font-size: 14px; color: #999">记忆化搜索</a> <a href="/tags/贪心/" style="font-size: 14px; color: #999">贪心</a>
     </div>
 </section>
 

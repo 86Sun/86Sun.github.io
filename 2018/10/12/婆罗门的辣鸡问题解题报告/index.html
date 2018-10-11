@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="蒟蒻sxy的blog">
 <meta property="og:description" content="总体来说还算可以的一套题。。。">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2018-10-11T16:11:43.547Z">
+<meta property="og:updated_time" content="2018-10-11T16:25:50.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="婆罗门的辣鸡问题解题报告">
 <meta name="twitter:description" content="总体来说还算可以的一套题。。。">
@@ -38,6 +38,9 @@
       document.getElementById('loading-bar').style.width=num+"%";
     }
   </script>
+  
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -162,7 +165,7 @@
 <h2>婆罗门的山区火箭运输</h2>
 <p>这题实际上相当于货车运输的高度弱化版。。。</p>
 <p>看到最大值最小就想到了二分答案。。。但是二分答案的验证复杂度不稳定。。。</p>
-<p>最坏大概是O(2^{nm}log max{w_{i,j}}-min{w_{i,j}})</p>
+<p>最坏大概是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>2</mn><mrow><mi>n</mi><mi>m</mi></mrow></msup><mi>l</mi><mi>o</mi><mi>g</mi><mi>m</mi><mi>a</mi><mi>x</mi><mrow><msub><mi>w</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><mo>−</mo><mi>m</mi><mi>i</mi><mi>n</mi><mrow><msub><mi>w</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">O(2^{nm}log max{w_{i,j}}-min{w_{i,j}})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">n</span><span class="mord mathit mtight">m</span></span></span></span></span></span></span></span></span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mord"><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"></span></span></span></span></span></span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord"><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
 <p>并不能稳过</p>
 <p>而转化成货车运输的思路，操作比那要简单得多</p>
 <p>先建图，把点权差的绝对值当做边权</p>

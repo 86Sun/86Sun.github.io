@@ -230,7 +230,7 @@
       <title>OI做题记录</title>
       <link href="/2018/10/09/OI%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
       <url>/2018/10/09/OI%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
-      <content type="html"><![CDATA[<p>不定期更新（咕咕咕）</p><a id="more"></a><p>CF492C Vanya and Exams   贪心</p><p>[SCOI2005]互不侵犯  状压dp</p><p>Hanoi双塔问题  高精+递推</p><p>luogu P1439 【模板】最长公共子序列   LIS(n log n)+离散化</p><p>奶酪  并查集</p><p>luogu P1784 数独  搜索</p><p>bzoj 3251: 树上三角形 暴力+找规律</p><p>Mayan游戏 : dfs，模拟</p><p>luogu P3916 图的遍历 : 搜索 记忆化</p><p>bzoj 2456 众数(mode) : 神奇操作</p><p>luogu P3368 【模板】树状数组 2 : 树状数组维护差分数组</p><p>luogu P2801 教主的魔法 : 线段树</p><p>考试：</p><p>婆罗门的山区火箭运输  生成树</p><p>婆罗门的井字棋  模拟</p><p>婆罗门的城市斗鸡  数学，模拟</p><p>[USACO09NOV]找工就业Job Hunt  spfa，判环</p><p>[USACO08OCT]打井Watering Hole  生成树，贪心</p><p>[USACO14FEB]路障Roadblock , luogu P1186 玛丽卡 : 暴力枚举，spfa</p><p>最接近神的人_NOI导刊2010提高（02）  逆序对，树状数组/归并排序</p><p>nowcoder 体积数  暴力枚举+快速幂+树状数组统计</p>]]></content>
+      <content type="html"><![CDATA[<p>不定期更新（咕咕咕）</p><a id="more"></a><p>CF492C Vanya and Exams   贪心</p><p>[SCOI2005]互不侵犯  状压dp</p><p>Hanoi双塔问题  高精+递推</p><p>luogu P1439 【模板】最长公共子序列   LIS(n log n)+离散化</p><p>奶酪  并查集</p><p>luogu P1784 数独  搜索</p><p>bzoj 3251: 树上三角形 暴力+找规律</p><p>Mayan游戏 : dfs，模拟</p><p>luogu P3916 图的遍历 : 搜索 记忆化</p><p>bzoj 2456 众数(mode) : 神奇操作</p><p>luogu P3368 【模板】树状数组 2 : 树状数组维护差分数组</p><p>luogu P2801 教主的魔法 : 线段树</p><p>考试：</p><p>  婆罗门的山区火箭运输  生成树</p><p>  婆罗门的井字棋  模拟</p><p>  婆罗门的城市斗鸡  数学，模拟</p><p>[USACO09NOV]找工就业Job Hunt  spfa，判环</p><p>[USACO08OCT]打井Watering Hole  生成树，贪心</p><p>[USACO14FEB]路障Roadblock , luogu P1186 玛丽卡 : 暴力枚举，spfa</p><p>最接近神的人_NOI导刊2010提高（02）  逆序对，树状数组/归并排序</p><p>nowcoder 体积数  暴力枚举+快速幂+树状数组统计</p><p>[NOIP2007]树网的核  dfs，树的直径，暴力，floyd，尺取</p><p>[NOIP2008]双栈排序  dfs，二分图，并查集</p>]]></content>
       
       
         <tags>

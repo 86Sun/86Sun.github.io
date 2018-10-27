@@ -162,38 +162,32 @@
             <p>初学欧拉路径</p>
 <a id="more"></a>
 <h3>欧拉路径和欧拉回路的概念</h3>
-
 <p><a herf="[https://www.cnblogs.com/acxblog/">@ACX</a>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">什么是欧拉路径？在图上用一种走法经过所有的边一次且只有一次的路径叫做欧拉路径。即一笔画。</span><br><span class="line"></span><br><span class="line">如果这条路径的起点和终点重合，那么就是欧拉回路。</span><br></pre></td></tr></table></figure>
 <p>欧拉回路就是一笔画最后又走回去了，欧拉路径就是走不回去但是可以一笔画。。。</p>
 <p>所以要怎么确定一个图中是否存在欧拉路径/欧拉回路？</p>
 <h3>无向图中</h3>
-
 <p>欧拉路径：只有两个点的度数为奇数，其余均为偶数</p>
 <p>欧拉回路：不存在度数为奇数的点</p>
 <p><a href="https://www.cnblogs.com/acxblog/" target="_blank" rel="noopener">@ACX</a>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">无向图：因为欧拉路径中，除了起点与终点以外，任意点的“进”“出”次数相等，所以除了两个点为奇点（度数为奇数的点）（终点和起点）以外，其它点的度数均为偶数。</span><br><span class="line"></span><br><span class="line">如果是欧拉回路，奇点的个数应该为0。</span><br></pre></td></tr></table></figure>
 <h3>有向图中</h3>
-
 <p>欧拉路径：入度和出度不相等的点数不大于2（不一定是起点和终点，比如1-&gt;2-&gt;3-&gt;2，只有一个点入度不等于出度）</p>
 <p>欧拉回路：所有点的入度均等于出度</p>
 <p><a href="https://www.cnblogs.com/acxblog/" target="_blank" rel="noopener">@ACX</a>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有向图：欧拉路径中，最多只有两个点的入度不等于出度。起点出度比入度大1，终点入度比出度大1。</span><br><span class="line"></span><br><span class="line">如果是欧拉回路，所有点的 入度=出度 。</span><br></pre></td></tr></table></figure>
 <h3>欧拉路径/欧拉回路的求法</h3>
-
 <p>先找出起点和终点，然后dfs+回溯就ok</p>
 <p><a herf="https://www.cnblogs.com/acxblog/p/7390301.html">这里说的比较好</a></p>
 <hr>
 <p>例题</p>
 <p><a href="https://www.luogu.org/problemnew/show/P2731" target="_blank" rel="noopener">luoguP1341无序字母对</a></p>
 <h2>sol</h2>
-
 <p>给出一对字母对我们就可以看成是加了边，能生成n+1个字母的串包含这n个字母对的条件就是这个图包含欧拉路径/欧拉回路</p>
 <p>也就是题目等价于：</p>
 <p>给出n条边，要求求出一个字典序最小的方案，可以把每条边都走一遍，输出路径上的点</p>
 <p>所以基本上就是一道欧拉路径/回路的模板题</p>
 <h2>Code</h2>
-
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,l,r) for(int i=l;i&lt;=r;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,l,r) for(int i=l;i&gt;=r;--i)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">bool</span> e[<span class="number">1001</span>][<span class="number">1001</span>];</span><br><span class="line"><span class="keyword">int</span> deg[<span class="number">1001</span>],p_deg_cnt,s=<span class="number">1001</span>;</span><br><span class="line"><span class="keyword">char</span> o_seq[<span class="number">1001</span>];</span><br><span class="line"><span class="keyword">bool</span> sxy,solved;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> now,<span class="keyword">int</span> depth)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	o_seq[depth]=now;</span><br><span class="line">	<span class="keyword">if</span>(depth==n+<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		solved=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	rep(i,(<span class="keyword">int</span>)<span class="string">'A'</span>,(<span class="keyword">int</span>)<span class="string">'z'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(e[now][i])</span><br><span class="line">		&#123;</span><br><span class="line">			e[now][i]=<span class="number">0</span>;e[i][now]=<span class="number">0</span>;</span><br><span class="line">			dfs(i,depth+<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span>(solved)</span><br><span class="line">			 <span class="keyword">return</span>;</span><br><span class="line">			e[now][i]=<span class="number">1</span>;e[i][now]=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> tx,ty;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	rep(i,<span class="number">1</span>,n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>((tx=getchar())==<span class="string">' '</span>||tx==<span class="string">'\n'</span>||tx==<span class="string">'\r'</span>);</span><br><span class="line">		ty=getchar();</span><br><span class="line">		e[(<span class="keyword">int</span>)tx][(<span class="keyword">int</span>)ty]=<span class="number">1</span>;e[(<span class="keyword">int</span>)ty][(<span class="keyword">int</span>)tx]=<span class="number">1</span>;</span><br><span class="line">		deg[(<span class="keyword">int</span>)tx]++;deg[(<span class="keyword">int</span>)ty]++;</span><br><span class="line">		s=min(s,(<span class="keyword">int</span>)tx);s=min(s,(<span class="keyword">int</span>)ty);</span><br><span class="line">	&#125;</span><br><span class="line">	rep(i,(<span class="keyword">int</span>)<span class="string">'A'</span>,(<span class="keyword">int</span>)<span class="string">'z'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	 	<span class="keyword">if</span>(deg[i]&amp;<span class="number">1</span>)<span class="comment">//judge degree</span></span><br><span class="line">	 	&#123;</span><br><span class="line">	  		++p_deg_cnt;</span><br><span class="line">	  		<span class="keyword">if</span>(!sxy)</span><br><span class="line">	  		&#123;</span><br><span class="line">	  			sxy=<span class="number">1</span>;s=i;</span><br><span class="line">	  		&#125;</span><br><span class="line">	  		<span class="keyword">else</span></span><br><span class="line">	  		 s=min(s,i);</span><br><span class="line">	  	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p_deg_cnt&gt;=<span class="number">3</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"No Solution"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(s,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span>(solved)</span><br><span class="line">	 rep(i,<span class="number">1</span>,n+<span class="number">1</span>)</span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">"%c"</span>,o_seq[i]);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	 <span class="built_in">printf</span>(<span class="string">"No Solution"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
@@ -212,6 +206,28 @@
 
         
             <div class="prev-next">
+                
+                    <section class="prev" >
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/10/18/差分约束学习笔记/" rel="prev" title="初涉差分约束">
+                                    初涉差分约束
+                                </a>
+                            </h4>
+                            
+                                <div class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>图论
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>最短路
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>差分约束
+                                    
+                                </div>
+                            
+                        </span>
+                    </section>
                 
                 
                     <section class="next">
@@ -255,15 +271,15 @@
         <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
             
+                <li><a href="http://www.sxyoi.cn/2018/10/18/欧拉定理及扩展欧拉定理/">欧拉定理及扩展欧拉定理</a></li>
+            
+                <li><a href="http://www.sxyoi.cn/2018/10/18/差分约束学习笔记/">初涉差分约束</a></li>
+            
                 <li><a href="http://www.sxyoi.cn/2018/10/17/旅行家的预算/">旅行家的预算</a></li>
             
                 <li><a href="http://www.sxyoi.cn/2018/10/16/传纸条/">传纸条</a></li>
             
                 <li><a href="http://www.sxyoi.cn/2018/10/16/灾后重建/">luogu P1119 灾后重建</a></li>
-            
-                <li><a href="http://www.sxyoi.cn/2018/10/15/双栈排序/">双栈排序</a></li>
-            
-                <li><a href="http://www.sxyoi.cn/2018/10/15/树网的核/">树网的核</a></li>
             
         </ul>
     </div>
@@ -348,7 +364,7 @@
 <section class="m_widget tagcloud">
     <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
     <div class='content'>
-        <a href="/tags/DFS/" style="font-size: 20px; color: #707070">DFS</a> <a href="/tags/Floyd/" style="font-size: 16px; color: #8b8b8b">Floyd</a> <a href="/tags/SPFA/" style="font-size: 16px; color: #8b8b8b">SPFA</a> <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/二分/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/二分图/" style="font-size: 14px; color: #999">二分图</a> <a href="/tags/动态规划/" style="font-size: 20px; color: #707070">动态规划</a> <a href="/tags/图论/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/堆/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/对偶图/" style="font-size: 14px; color: #999">对偶图</a> <a href="/tags/并查集/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/数学/" style="font-size: 16px; color: #8b8b8b">数学</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/日志/" style="font-size: 16px; color: #8b8b8b">日志</a> <a href="/tags/最小割/" style="font-size: 14px; color: #999">最小割</a> <a href="/tags/最小生成树/" style="font-size: 16px; color: #8b8b8b">最小生成树</a> <a href="/tags/最短路/" style="font-size: 16px; color: #8b8b8b">最短路</a> <a href="/tags/枚举/" style="font-size: 14px; color: #999">枚举</a> <a href="/tags/模拟/" style="font-size: 22px; color: #636363">模拟</a> <a href="/tags/欧拉路径-欧拉回路/" style="font-size: 14px; color: #999">欧拉路径/欧拉回路</a> <a href="/tags/比赛/" style="font-size: 16px; color: #8b8b8b">比赛</a> <a href="/tags/状压dp/" style="font-size: 14px; color: #999">状压dp</a> <a href="/tags/神奇操作/" style="font-size: 14px; color: #999">神奇操作</a> <a href="/tags/记忆化搜索/" style="font-size: 16px; color: #8b8b8b">记忆化搜索</a> <a href="/tags/贪心/" style="font-size: 18px; color: #7e7e7e">贪心</a>
+        <a href="/tags/DFS/" style="font-size: 19px; color: #777">DFS</a> <a href="/tags/Floyd/" style="font-size: 17.33px; color: #828282">Floyd</a> <a href="/tags/SPFA/" style="font-size: 15.67px; color: #8e8e8e">SPFA</a> <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/二分/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/二分图/" style="font-size: 14px; color: #999">二分图</a> <a href="/tags/倍增/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/动态规划/" style="font-size: 22.33px; color: #606060">动态规划</a> <a href="/tags/图论/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/堆/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/对偶图/" style="font-size: 14px; color: #999">对偶图</a> <a href="/tags/差分约束/" style="font-size: 14px; color: #999">差分约束</a> <a href="/tags/并查集/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/数学/" style="font-size: 15.67px; color: #8e8e8e">数学</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/数论/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/日志/" style="font-size: 15.67px; color: #8e8e8e">日志</a> <a href="/tags/最小割/" style="font-size: 14px; color: #999">最小割</a> <a href="/tags/最小生成树/" style="font-size: 15.67px; color: #8e8e8e">最小生成树</a> <a href="/tags/最短路/" style="font-size: 22.33px; color: #606060">最短路</a> <a href="/tags/期望/" style="font-size: 14px; color: #999">期望</a> <a href="/tags/枚举/" style="font-size: 14px; color: #999">枚举</a> <a href="/tags/模拟/" style="font-size: 20.67px; color: #6c6c6c">模拟</a> <a href="/tags/欧拉路径-欧拉回路/" style="font-size: 14px; color: #999">欧拉路径/欧拉回路</a> <a href="/tags/比赛/" style="font-size: 15.67px; color: #8e8e8e">比赛</a> <a href="/tags/状压dp/" style="font-size: 14px; color: #999">状压dp</a> <a href="/tags/神奇操作/" style="font-size: 14px; color: #999">神奇操作</a> <a href="/tags/背包/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/记忆化搜索/" style="font-size: 15.67px; color: #8e8e8e">记忆化搜索</a> <a href="/tags/贪心/" style="font-size: 17.33px; color: #828282">贪心</a>
     </div>
 </section>
 

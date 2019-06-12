@@ -162,81 +162,52 @@
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <p>NOIP 2008 TG</p>
+            <p> NOIP 2008 TG </p>
 <a id="more"></a>
-<div class="am-u-md-8 lg-right" name="problemleft">
-<div class="lg-content-left">
-<div class="lg-article am-g">
-<h2>题目描述</h2>
-<p><code>Tom</code>最近在研究一个有趣的排序问题。如图所示，通过$2$个栈$S_1$和$S_2$，<code>Tom</code>希望借助以下$4$种操作实现将输入序列升序排序。</p>
-<p><img src="https://cdn.luogu.org/upload/pic/51.png" alt=""> </p>
-<p>操作$a$</p>
-<p>如果输入序列不为空，将第一个元素压入栈$S_1$</p>
-<p>操作$b$</p>
-<p>如果栈$S_1$不为空，将$S_1$栈顶元素弹出至输出序列</p>
-<p>操作$c$</p>
-<p>如果输入序列不为空，将第一个元素压入栈$S_2$</p>
-<p>操作$d$</p>
-<p>如果栈$S_2$不为空，将$S_2$栈顶元素弹出至输出序列</p>
-<p>如果一个$1-n$的排列P可以通过一系列操作使得输出序列为$1,2,…,(n-1),n$，<code>Tom</code>就称$P$是一个“可双栈排序排列”。例如$(1,3,2,4)$就是一个“可双栈排序序列”，而$(2,3,4,1)$不是。下图描述了一个将$(1,3,2,4)$排序的操作序列：$&lt;a,c,c,b,a,d,d,b&gt;$</p>
-<p><img src="https://cdn.luogu.org/upload/pic/52.png" alt=""> </p>
-<p>当然，这样的操作序列有可能有几个，对于上例$(1,3,2,4)$，$&lt;a,c,c,b,a,d,d,b&gt;$是另外一个可行的操作序列。<code>Tom</code>希望知道其中字典序最小的操作序列是什么。</p>
-<h2>输入输出格式</h2>
-<strong>输入格式：</strong><br>
-<p></p><p>第一行是一个整数$n$。</p>
-<p>第二行有$n$个用空格隔开的正整数，构成一个$1-n$的排列。</p><p></p>
-<strong>输出格式：</strong><br>
-<p></p><p>共一行，如果输入的排列不是“可双栈排序排列”，输出数字$0$；否则输出字典序最小的操作序列，每两个操作之间用空格隔开，行尾没有空格。</p><p></p>
-<h2>输入输出样例</h2>
-<div class="am-g">
-<div class="am-u-md-6 copy-region">
-<strong>输入样例#1：</strong>
-<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
-<pre>4
-1 3 2 4</pre>
-</div>
-<div class="am-u-md-6 copy-region">
-<strong>输出样例#1：</strong>
-<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
-<pre>a b a a b b a b</pre>
-</div>
-</div>
-<div class="am-g">
-<div class="am-u-md-6 copy-region">
-<strong>输入样例#2：</strong>
-<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
-<pre>4
-2 3 4 1</pre>
-</div>
-<div class="am-u-md-6 copy-region">
-<strong>输出样例#2：</strong>
-<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
-<pre>0</pre>
-</div>
-</div>
-<div class="am-g">
-<div class="am-u-md-6 copy-region">
-<strong>输入样例#3：</strong>
-<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
-<pre>3
-2 3 1</pre>
-</div>
-<div class="am-u-md-6 copy-region">
-<strong>输出样例#3：</strong>
-<a class="am-badge am-radius lg-bg-orange sample-copy">复制</a>
-<pre>a c a b b d</pre>
-</div>
-</div>
-<h2>说明</h2>
-<p>$30\%$的数据满足： $n \le 10$</p>
-<p>$50\%$的数据满足：$ n \le 50$</p>
-<p>$100\%$的数据满足： $n \le 1000$</p>
-</div>
-<div class="lg-article-sub am-g" id="sub"></div>
-</div>
-</div>
----
-<h1>sol</h1>
+<p><div class="am-u-md-8 lg-right" name="problemleft"></div></p>
+<p><div class="lg-content-left"></div></p>
+<p><div class="lg-article am-g"></div></p>
+<p></p><h2>题目描述</h2><p></p>
+<p></p><p><code>Tom</code>最近在研究一个有趣的排序问题。如图所示，通过$2$个栈$S_1$和$S_2$，<code>Tom</code>希望借助以下$4$种操作实现将输入序列升序排序。</p><p></p>
+<p></p><p><img src="https://cdn.luogu.org/upload/pic/51.png" alt=""> </p><p></p>
+<p></p><p>操作$a$</p><p></p>
+<p></p><p>如果输入序列不为空，将第一个元素压入栈$S_1$</p><p></p>
+<p></p><p>操作$b$</p><p></p>
+<p></p><p>如果栈$S_1$不为空，将$S_1$栈顶元素弹出至输出序列</p><p></p>
+<p></p><p>操作$c$</p><p></p>
+<p></p><p>如果输入序列不为空，将第一个元素压入栈$S_2$</p><p></p>
+<p></p><p>操作$d$</p><p></p>
+<p></p><p>如果栈$S_2$不为空，将$S_2$栈顶元素弹出至输出序列</p><p></p>
+<p></p><p>如果一个$1-n$的排列P可以通过一系列操作使得输出序列为$1,2,…,(n-1),n$，<code>Tom</code>就称$P$是一个“可双栈排序排列”。例如$(1,3,2,4)$就是一个“可双栈排序序列”，而$(2,3,4,1)$不是。下图描述了一个将$(1,3,2,4)$排序的操作序列：$&lt;a,c,c,b,a,d,d,b&gt;$</p><p></p>
+<p></p><p><img src="https://cdn.luogu.org/upload/pic/52.png" alt=""> </p><p></p>
+<p></p><p>当然，这样的操作序列有可能有几个，对于上例$(1,3,2,4)$，$&lt;a,c,c,b,a,d,d,b&gt;$是另外一个可行的操作序列。<code>Tom</code>希望知道其中字典序最小的操作序列是什么。</p><p></p>
+<p></p><h2>输入输出格式</h2><br><strong>输入格式：</strong><br><p></p>
+<p></p><p></p><p>第一行是一个整数$n$。</p><p></p>
+<p></p><p>第二行有$n$个用空格隔开的正整数，构成一个$1-n$的排列。</p><p></p><br><strong>输出格式：</strong><br><p></p>
+<p></p><p></p><p>共一行，如果输入的排列不是“可双栈排序排列”，输出数字$0$；否则输出字典序最小的操作序列，每两个操作之间用空格隔开，行尾没有空格。</p><p></p><p></p>
+<p></p><h2>输入输出样例</h2><p></p>
+<p><div class="am-g"></div></p>
+<p><div class="am-u-md-6 copy-region"><br><strong>输入样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a></div></p>
+<p><pre>4<br>1 3 2 4</pre><br></p>
+<p><div class="am-u-md-6 copy-region"><br><strong>输出样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a></div></p>
+<p><pre>a b a a b b a b</pre><br><br></p>
+<p><div class="am-g"></div></p>
+<p><div class="am-u-md-6 copy-region"><br><strong>输入样例#2：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a></div></p>
+<p><pre>4<br>2 3 4 1</pre><br></p>
+<p><div class="am-u-md-6 copy-region"><br><strong>输出样例#2：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a></div></p>
+<p><pre>0</pre><br><br></p>
+<p><div class="am-g"></div></p>
+<p><div class="am-u-md-6 copy-region"><br><strong>输入样例#3：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a></div></p>
+<p><pre>3<br>2 3 1</pre><br></p>
+<p><div class="am-u-md-6 copy-region"><br><strong>输出样例#3：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a></div></p>
+<p><pre>a c a b b d</pre><br><br></p>
+<p></p><h2>说明</h2><p></p>
+<p></p><p>$30\%$的数据满足： $n \le 10$</p><p></p>
+<p></p><p>$50\%$的数据满足：$ n \le 50$</p><p></p>
+<p></p><p>$100\%$的数据满足： $n \le 1000$</p><br><p></p>
+<p><div class="lg-article-sub am-g" id="sub"></div><br></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1>sol</h1>
+
 <p>双栈，先考虑一比较简单的问题，化简问题，双-&gt;单</p>
 <p>单栈用来干什么？逆序对输出的缓存空间。</p>
 <p>单栈排序什么时候无法进行？</p>
@@ -250,7 +221,7 @@
 <p>2 3 1</p>
 <p>可见上面那组其决定性的是2 4 1</p>
 <p>可得出正确结论：</p>
-<p>存在i&lt;j&lt;k ， a[j]&gt;a[i]&gt;a[k]时不能进行单栈排序</p>
+<p>存在i&lt;j<k ，="" a[j]="">a[i]&gt;a[k]时不能进行单栈排序</k></p>
 <p>有峰？1 3 2 4也有</p>
 <p>单峰？并不是</p>
 <p>不知道怎么定义这个东西，大概就是一个峰，左降慢右降快（好像不是一直）</p>
@@ -270,7 +241,7 @@
 <p>每出现一个那样的“峰”，我们就把两个“脊”和峰之间连一条边，最后判定一下是不是二分图，不是就输出0，是就模拟输出过程，就ok了，第一个染的点当然是放进第一个栈，没边没染的也是</p>
 <p>（其实没有必要给右边的“脊”加边，因为f[i]是后缀最小值，所以无法构造出一个能成为峰的右“脊”（可以用反证法），所以没有必要）</p>
 <p>emmm不是很懂为什么输出的时候一弹就要弹到不能再弹，大概跟前面的某些性质有关？</p>
-<p>所以前面思考单栈当然是有用的，单栈的n<sup>3显然对1000是过不了的，而n</sup>2就可以了</p>
+<p>所以前面思考单栈当然是有用的，单栈的n^3显然对1000是过不了的，而n^2就可以了</p>
 <p>然后其实也可以考虑用并查集，二分图和并查集好像还是比较相似的？</p>
 <p>那就是把峰弄到一个集合，脊弄到另一个？</p>
 <p>但是好像二分图染色比较更好弄？</p>
@@ -281,6 +252,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">一看这道题，感觉好难啊，感觉这道题爆捜都写不出来，</span><br><span class="line"></span><br><span class="line">但是看他是“双栈”，我就联想到了P1654；一个思路</span><br><span class="line"></span><br><span class="line">看见“双”，先想“单”，假设我们只有一个栈，怎么排序？</span><br><span class="line"></span><br><span class="line">考虑栈在排序中起了什么作用，其实就是辅助交换逆序对</span><br><span class="line"></span><br><span class="line">而它的能力有限，对于-&gt;2 3 1这样的数据是无能为力的</span><br><span class="line"></span><br><span class="line">我们看看像“2 3 1”，这种数据有什么性质</span><br><span class="line"></span><br><span class="line">-&gt;给2 3 1分别记为a1 a2 a3我们发现a3&lt;a1&lt;a2;再找其他几组满足</span><br><span class="line"></span><br><span class="line">a3&lt;a1&lt;a2的数据，我们会发现都不可以用单栈排序；</span><br><span class="line"></span><br><span class="line">所以我们就发现了本题的重要性质之一，这种情况下，我们</span><br><span class="line"></span><br><span class="line">就可以将a1压进1号栈，a2压进2号栈，a3压进1号栈，再分别</span><br><span class="line"></span><br><span class="line">弹出a3，a1，a2，就完成了排序。</span><br><span class="line"></span><br><span class="line">那么双栈是不是万能的呢？</span><br><span class="line"></span><br><span class="line">当然也不是了。。。</span><br><span class="line"></span><br><span class="line">我们考虑当a4&lt;a1&lt;a2&lt;a3时，是不是双栈就GG了？</span><br><span class="line"></span><br><span class="line">所以说，我们要判断可不可以用双栈排序，本质上就是要判断数列中存不存在</span><br><span class="line"></span><br><span class="line">a4&lt;a1&lt;a2&lt;a3。当然我们可以暴力判O(n^4) 2333，也可以优化一下先预处理出</span><br><span class="line"></span><br><span class="line">后缀最小值，然后O(n^3)判断，当然都会TLE。。或许其他大佬有更快的做法</span><br><span class="line"></span><br><span class="line">我这里写的是二分图染色的做法，具体解释在代码中。</span><br></pre></td></tr></table></figure>
 <hr>
 <h1>Code</h1>
+
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二分图代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,l,r) for(int i=l;i&lt;=r;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,l,r) for(int i=l;i&gt;=r;--i)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c;<span class="keyword">bool</span> t=<span class="number">0</span>;<span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar())==<span class="string">' '</span>||c==<span class="string">'\n'</span>||c==<span class="string">'\r'</span>);</span><br><span class="line">	<span class="keyword">if</span>(c==<span class="string">'-'</span>)&#123;t=<span class="number">1</span>;c=getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)&#123;a*=<span class="number">10</span>;a+=(c-<span class="string">'0'</span>);c=getchar();&#125;</span><br><span class="line">	<span class="keyword">return</span> a*(t?<span class="number">-1</span>:<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> to,next;</span><br><span class="line">&#125;e[<span class="number">100001</span>];</span><br><span class="line"><span class="keyword">int</span> n,a[<span class="number">1001</span>];</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">1001</span>];</span><br><span class="line"><span class="keyword">int</span> s1[<span class="number">1001</span>],s1_top,s2[<span class="number">1001</span>],s2_top;</span><br><span class="line"><span class="keyword">int</span> last[<span class="number">1001</span>],cnt;</span><br><span class="line"><span class="keyword">short</span> <span class="keyword">int</span> col[<span class="number">1001</span>],tt_col[<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">bool</span> noSol=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;from,<span class="keyword">const</span> <span class="keyword">int</span> &amp;to)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	e[++cnt].next=last[from];</span><br><span class="line">	last[from]=cnt;</span><br><span class="line">	e[cnt].to=to;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> now,<span class="keyword">int</span> t_col)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	col[now]=t_col;</span><br><span class="line">	<span class="keyword">int</span> temp=last[now];</span><br><span class="line">	<span class="keyword">while</span>(temp)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(col[e[temp].to]&lt;<span class="number">0</span>)</span><br><span class="line">		 dfs(e[temp].to,tt_col[t_col]);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(col[e[temp].to]!=tt_col[t_col])</span><br><span class="line">			&#123;</span><br><span class="line">				noSol=<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(noSol)</span><br><span class="line">		 <span class="keyword">return</span>;</span><br><span class="line">		temp=e[temp].next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n=read();</span><br><span class="line">	rep(i,<span class="number">1</span>,n)</span><br><span class="line">	 col[i]=<span class="number">-1</span>;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)</span><br><span class="line">	 a[i]=read();</span><br><span class="line">	f[n]=a[n];</span><br><span class="line">	per(i,n<span class="number">-1</span>,<span class="number">1</span>)</span><br><span class="line">	 f[i]=min(f[i+<span class="number">1</span>],a[i]);</span><br><span class="line">	rep(i,<span class="number">1</span>,n<span class="number">-2</span>)</span><br><span class="line">	 rep(j,i+<span class="number">1</span>,n<span class="number">-1</span>)</span><br><span class="line">	  <span class="keyword">if</span>(a[j]&gt;a[i]&amp;&amp;a[i]&gt;f[j+<span class="number">1</span>])</span><br><span class="line">	  &#123;</span><br><span class="line">	  	add(i,j);add(j,i);</span><br><span class="line">	  &#125;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(col[i]&lt;<span class="number">0</span>)</span><br><span class="line">		 dfs(i,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">if</span>(noSol)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cnt=<span class="number">1</span>;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(col[i])</span><br><span class="line">		&#123;</span><br><span class="line">			s2[++s2_top]=a[i];</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"c "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			s1[++s1_top]=a[i];</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"a "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>((s1[s1_top]==cnt&amp;&amp;s1_top)||(s2[s2_top]==cnt&amp;&amp;s2_top))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(s1[s1_top]==cnt)</span><br><span class="line">			&#123;</span><br><span class="line">				--s1_top;</span><br><span class="line">				++cnt;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"b "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				--s2_top;</span><br><span class="line">				++cnt;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"d "</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
@@ -461,7 +433,7 @@
 <section class="m_widget tagcloud">
     <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
     <div class='content'>
-        <a href="/tags/DFS/" style="font-size: 19.71px; color: #727272">DFS</a> <a href="/tags/Floyd/" style="font-size: 16.86px; color: #868686">Floyd</a> <a href="/tags/SPFA/" style="font-size: 15.43px; color: #8f8f8f">SPFA</a> <a href="/tags/tarjan/" style="font-size: 14px; color: #999">tarjan</a> <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/二分/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/二分图/" style="font-size: 15.43px; color: #8f8f8f">二分图</a> <a href="/tags/二分查找/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/二分答案/" style="font-size: 16.86px; color: #868686">二分答案</a> <a href="/tags/倍增/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/前缀和/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/动态规划/" style="font-size: 22.57px; color: #5f5f5f">动态规划</a> <a href="/tags/哈希判重/" style="font-size: 14px; color: #999">哈希判重</a> <a href="/tags/图论/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/堆/" style="font-size: 16.86px; color: #868686">堆</a> <a href="/tags/对偶图/" style="font-size: 14px; color: #999">对偶图</a> <a href="/tags/导数/" style="font-size: 14px; color: #999">导数</a> <a href="/tags/差分/" style="font-size: 14px; color: #999">差分</a> <a href="/tags/差分约束/" style="font-size: 14px; color: #999">差分约束</a> <a href="/tags/带权并查集/" style="font-size: 16.86px; color: #868686">带权并查集</a> <a href="/tags/并查集/" style="font-size: 18.29px; color: #7c7c7c">并查集</a> <a href="/tags/强连通分量/" style="font-size: 14px; color: #999">强连通分量</a> <a href="/tags/快速幂/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/数学/" style="font-size: 15.43px; color: #8f8f8f">数学</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/数论/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/日志/" style="font-size: 15.43px; color: #8f8f8f">日志</a> <a href="/tags/最小割/" style="font-size: 14px; color: #999">最小割</a> <a href="/tags/最小生成树/" style="font-size: 15.43px; color: #8f8f8f">最小生成树</a> <a href="/tags/最短路/" style="font-size: 22.57px; color: #5f5f5f">最短路</a> <a href="/tags/期望/" style="font-size: 14px; color: #999">期望</a> <a href="/tags/构造/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/枚举/" style="font-size: 14px; color: #999">枚举</a> <a href="/tags/模拟/" style="font-size: 19.71px; color: #727272">模拟</a> <a href="/tags/欧拉路径-欧拉回路/" style="font-size: 14px; color: #999">欧拉路径/欧拉回路</a> <a href="/tags/比赛/" style="font-size: 15.43px; color: #8f8f8f">比赛</a> <a href="/tags/状压dp/" style="font-size: 14px; color: #999">状压dp</a> <a href="/tags/神奇操作/" style="font-size: 14px; color: #999">神奇操作</a> <a href="/tags/缩点/" style="font-size: 14px; color: #999">缩点</a> <a href="/tags/背包/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/虚点并查集/" style="font-size: 14px; color: #999">虚点并查集</a> <a href="/tags/记忆化搜索/" style="font-size: 15.43px; color: #8f8f8f">记忆化搜索</a> <a href="/tags/贪心/" style="font-size: 21.14px; color: #686868">贪心</a>
+        <a href="/tags/DFS/" style="font-size: 19.71px; color: #727272">DFS</a> <a href="/tags/Floyd/" style="font-size: 16.86px; color: #868686">Floyd</a> <a href="/tags/SPFA/" style="font-size: 15.43px; color: #8f8f8f">SPFA</a> <a href="/tags/tarjan/" style="font-size: 14px; color: #999">tarjan</a> <a href="/tags/主席树/" style="font-size: 14px; color: #999">主席树</a> <a href="/tags/二分/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/二分图/" style="font-size: 15.43px; color: #8f8f8f">二分图</a> <a href="/tags/二分查找/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/二分答案/" style="font-size: 16.86px; color: #868686">二分答案</a> <a href="/tags/倍增/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/前缀和/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/动态规划/" style="font-size: 22.57px; color: #5f5f5f">动态规划</a> <a href="/tags/哈希判重/" style="font-size: 14px; color: #999">哈希判重</a> <a href="/tags/图论/" style="font-size: 24px; color: #555">图论</a> <a href="/tags/堆/" style="font-size: 16.86px; color: #868686">堆</a> <a href="/tags/对偶图/" style="font-size: 14px; color: #999">对偶图</a> <a href="/tags/导数/" style="font-size: 14px; color: #999">导数</a> <a href="/tags/差分/" style="font-size: 14px; color: #999">差分</a> <a href="/tags/差分约束/" style="font-size: 14px; color: #999">差分约束</a> <a href="/tags/带权并查集/" style="font-size: 16.86px; color: #868686">带权并查集</a> <a href="/tags/并查集/" style="font-size: 18.29px; color: #7c7c7c">并查集</a> <a href="/tags/强连通分量/" style="font-size: 14px; color: #999">强连通分量</a> <a href="/tags/快速幂/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/数学/" style="font-size: 15.43px; color: #8f8f8f">数学</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/数论/" style="font-size: 14px; color: #999">数论</a> <a href="/tags/日志/" style="font-size: 16.86px; color: #868686">日志</a> <a href="/tags/最小割/" style="font-size: 14px; color: #999">最小割</a> <a href="/tags/最小生成树/" style="font-size: 15.43px; color: #8f8f8f">最小生成树</a> <a href="/tags/最短路/" style="font-size: 22.57px; color: #5f5f5f">最短路</a> <a href="/tags/期望/" style="font-size: 14px; color: #999">期望</a> <a href="/tags/构造/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/枚举/" style="font-size: 14px; color: #999">枚举</a> <a href="/tags/模拟/" style="font-size: 19.71px; color: #727272">模拟</a> <a href="/tags/欧拉路径-欧拉回路/" style="font-size: 14px; color: #999">欧拉路径/欧拉回路</a> <a href="/tags/比赛/" style="font-size: 15.43px; color: #8f8f8f">比赛</a> <a href="/tags/状压dp/" style="font-size: 14px; color: #999">状压dp</a> <a href="/tags/神奇操作/" style="font-size: 14px; color: #999">神奇操作</a> <a href="/tags/缩点/" style="font-size: 14px; color: #999">缩点</a> <a href="/tags/背包/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/虚点并查集/" style="font-size: 14px; color: #999">虚点并查集</a> <a href="/tags/记忆化搜索/" style="font-size: 15.43px; color: #8f8f8f">记忆化搜索</a> <a href="/tags/贪心/" style="font-size: 21.14px; color: #686868">贪心</a>
     </div>
 </section>
 
@@ -481,7 +453,7 @@
     <section class="m_widget toc-wrapper">
         <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
         <div class='content'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">输入输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">输入输出样例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">sol</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Code</span></a>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">输入输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">输入输出样例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">sol</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Code</span></a>
         </div>
     </section>
 

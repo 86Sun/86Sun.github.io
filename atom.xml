@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.sxyoi.cn/"/>
-  <updated>2019-06-12T05:16:56.471Z</updated>
+  <updated>2020-02-24T07:47:09.732Z</updated>
   <id>http://www.sxyoi.cn/</id>
   
   <author>
@@ -17,22 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>再见，高中</title>
-    <link href="http://www.sxyoi.cn/2019/06/12/%E6%96%B0%E7%94%9F/"/>
-    <id>http://www.sxyoi.cn/2019/06/12/新生/</id>
-    <published>2019-06-12T05:13:18.000Z</published>
-    <updated>2019-06-12T05:16:56.471Z</updated>
+    <title>Java入门反思</title>
+    <link href="http://www.sxyoi.cn/2020/02/23/%E6%96%B0%E7%94%9F/"/>
+    <id>http://www.sxyoi.cn/2020/02/23/新生/</id>
+    <published>2020-02-23T05:13:18.000Z</published>
+    <updated>2020-02-24T07:47:09.732Z</updated>
     
-    <content type="html"><![CDATA[<h3>高考结束</h3><a id="more"></a><p>当时noip结束的时候，感觉时间过得很快，但是不够快</p><p>再回首。。。</p><p>希望我以后珍惜时间</p><p>无论结果如何，高三结束了</p><p>再见，高中！</p>]]></content>
+    <content type="html"><![CDATA[<p>这几天被疫情困在家里</p><p>于是乎看了一下Java</p><p>感觉Java最不同于我之前学OI的时候的学的编程的地方就是面向对象的这种方式</p><p>也需要花更多的时间来想怎么能提高代码的可维护性，比如避免多个类用到的变量冲突、文件目录等等</p><p>但纸上得来终觉浅，还是要多实际操作一下，不然总是会觉得某些实际上挺有用的东西十分冗余，同时多看一些优秀的开源项目，学习他们优秀的地方</p>]]></content>
     
     <summary type="html">
     
-      &lt;h3&gt;高考结束&lt;/h3&gt;
+      
+      
+        &lt;p&gt;这几天被疫情困在家里&lt;/p&gt;
+&lt;p&gt;于是乎看了一下Java&lt;/p&gt;
+&lt;p&gt;感觉Java最不同于我之前学OI的时候的学的编程的地方就是面向对象的这种方式&lt;/p&gt;
+&lt;p&gt;也需要花更多的时间来想怎么能提高代码的可维护性，比如避免多个类用到的变量冲突、文件目录等等&lt;/p&gt;
+&lt;p&gt;但
+      
     
     </summary>
     
     
-      <category term="日志" scheme="http://www.sxyoi.cn/tags/%E6%97%A5%E5%BF%97/"/>
+      <category term="Java" scheme="http://www.sxyoi.cn/tags/Java/"/>
     
   </entry>
   
@@ -228,9 +235,9 @@
     
       <category term="二分答案" scheme="http://www.sxyoi.cn/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
     
-      <category term="二分图" scheme="http://www.sxyoi.cn/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
-    
       <category term="并查集" scheme="http://www.sxyoi.cn/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+      <category term="二分图" scheme="http://www.sxyoi.cn/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
     
       <category term="虚点并查集" scheme="http://www.sxyoi.cn/tags/%E8%99%9A%E7%82%B9%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     

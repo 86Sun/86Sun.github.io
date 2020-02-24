@@ -3,15 +3,15 @@
   
     
     <entry>
-      <title>再见，高中</title>
-      <link href="/2019/06/12/%E6%96%B0%E7%94%9F/"/>
-      <url>/2019/06/12/%E6%96%B0%E7%94%9F/</url>
-      <content type="html"><![CDATA[<h3>高考结束</h3><a id="more"></a><p>当时noip结束的时候，感觉时间过得很快，但是不够快</p><p>再回首。。。</p><p>希望我以后珍惜时间</p><p>无论结果如何，高三结束了</p><p>再见，高中！</p>]]></content>
+      <title>Java入门反思</title>
+      <link href="/2020/02/23/%E6%96%B0%E7%94%9F/"/>
+      <url>/2020/02/23/%E6%96%B0%E7%94%9F/</url>
+      <content type="html"><![CDATA[<p>这几天被疫情困在家里</p><p>于是乎看了一下Java</p><p>感觉Java最不同于我之前学OI的时候的学的编程的地方就是面向对象的这种方式</p><p>也需要花更多的时间来想怎么能提高代码的可维护性，比如避免多个类用到的变量冲突、文件目录等等</p><p>但纸上得来终觉浅，还是要多实际操作一下，不然总是会觉得某些实际上挺有用的东西十分冗余，同时多看一些优秀的开源项目，学习他们优秀的地方</p>]]></content>
       
       
         <tags>
             
-            <tag> 日志 </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -160,9 +160,9 @@
             
             <tag> 二分答案 </tag>
             
-            <tag> 二分图 </tag>
-            
             <tag> 并查集 </tag>
+            
+            <tag> 二分图 </tag>
             
             <tag> 虚点并查集 </tag>
             
@@ -440,9 +440,9 @@
       
         <tags>
             
-            <tag> 图论 </tag>
-            
             <tag> DFS </tag>
+            
+            <tag> 图论 </tag>
             
             <tag> 欧拉路径/欧拉回路 </tag>
             
@@ -510,13 +510,13 @@
       
         <tags>
             
-            <tag> 图论 </tag>
-            
             <tag> DFS </tag>
             
-            <tag> 二分图 </tag>
+            <tag> 图论 </tag>
             
             <tag> 并查集 </tag>
+            
+            <tag> 二分图 </tag>
             
         </tags>
       
@@ -531,9 +531,9 @@
       
         <tags>
             
-            <tag> 图论 </tag>
-            
             <tag> DFS </tag>
+            
+            <tag> 图论 </tag>
             
             <tag> 模拟 </tag>
             
@@ -620,6 +620,23 @@
     </entry>
     
     <entry>
+      <title>P3916 图的遍历</title>
+      <link href="/2018/10/10/P3916%20%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"/>
+      <url>/2018/10/10/P3916%20%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</url>
+      <content type="html"><![CDATA[<p>一道图论题</p><a id="more"></a><div class="am-u-md-8 lg-right" name="problemleft"><br><div class="lg-content-left"><br><div class="lg-article am-g"><br><h2>题目描述</h2><br><p>给出$N$个点，$M$条边的有向图，对于每个点$v$，求$A(v)$表示从点$v$出发，能到达的编号最大的点。</p><br><h2>输入输出格式</h2><br><strong>输入格式：</strong><br><br><p></p><p>第1 行，2 个整数$N,M$。</p><br><p>接下来$M$行，每行2个整数$U_i,V_i$，表示边$(U_i,V_i)$。点用$1, 2,\cdots,N$编号。</p><p></p><br><strong>输出格式：</strong><br><br><p></p><p>N 个整数$A(1),A(2),\cdots,A(N)$。</p><p></p><br><h2>输入输出样例</h2><br><div class="am-g"><br><div class="am-u-md-6 copy-region"><br><strong>输入样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a><br><pre>4 3<br>1 2<br>2 4<br>4 3</pre><br></div><br><div class="am-u-md-6 copy-region"><br><strong>输出样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a><br><pre>4 4 3 4</pre><br></div><br></div><br><h2>说明</h2><br><p>• 对于60% 的数据，$1 \le N . K \le 10^3$；</p><br><p>• 对于100% 的数据，$1 \le N , M \le 10^5$。</p><br></div><hr><h1>sol</h1><p>看到这题第一眼：</p><p> 记忆化，直接搜</p><p>然后就WA了</p><p>大概能知道某种环可以卡掉，但是不知道怎么构造以及为什么</p><p>其实是因为后搜到的没办法更新了</p><p>比如这组数据(感谢<a href="sxyugao.top">@sxyugao</a>大佬提供的hack数据，原题hack数据太大了。。。)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 3</span><br><span class="line">1 3</span><br><span class="line">1 2</span><br><span class="line">2 1</span><br></pre></td></tr></table></figure><p>所以我们反着建图，记录大的点能到哪些小的点（也就是原图小的点能到哪些大的点），从大的开始搜索，就不会存在这样的问题</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,l,r) for(int i=l;i&lt;=r;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,l,r) for(int i=l;i&gt;=r;--i)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">char</span> c;</span><br><span class="line"><span class="keyword">bool</span> t=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>((c=getchar())==<span class="string">' '</span>||c==<span class="string">'\n'</span>||c==<span class="string">'\r'</span>);</span><br><span class="line"><span class="keyword">if</span>(c==<span class="string">'-'</span>)</span><br><span class="line">&#123;</span><br><span class="line">t=<span class="number">1</span>;</span><br><span class="line">c=getchar();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)</span><br><span class="line">&#123;</span><br><span class="line">a*=<span class="number">10</span>;</span><br><span class="line">a+=(c-<span class="string">'0'</span>);</span><br><span class="line">c=getchar();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> a*(t?<span class="number">-1</span>:<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line"><span class="keyword">int</span> to,next;</span><br><span class="line">&#125;e[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> cnt,n,m;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100010</span>],last[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">const</span> <span class="keyword">int</span> st)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(a[x])</span><br><span class="line"> <span class="keyword">return</span>;</span><br><span class="line">a[x]=st;</span><br><span class="line"><span class="keyword">int</span> temp=last[x];</span><br><span class="line"><span class="keyword">while</span>(temp)</span><br><span class="line">&#123;</span><br><span class="line">dfs(e[temp].to,st);</span><br><span class="line">temp=e[temp].next;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;from,<span class="keyword">const</span> <span class="keyword">int</span> &amp;to)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">e[++cnt].to=from;</span><br><span class="line">e[cnt].next=last[to];</span><br><span class="line">last[to]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> tx,ty;</span><br><span class="line">n=read();m=read();</span><br><span class="line">rep(i,<span class="number">1</span>,m)</span><br><span class="line">&#123;</span><br><span class="line">tx=read();ty=read();</span><br><span class="line">add(tx,ty);</span><br><span class="line">&#125;</span><br><span class="line">per(i,n,<span class="number">1</span>)</span><br><span class="line"> dfs(i,i);</span><br><span class="line">rep(i,<span class="number">1</span>,n)</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h3>题外话</h3><p>图论的题还是比较玄学啊orz</p><p>不知道要怎么练习这种东西</p></div></div>]]></content>
+      
+      
+        <tags>
+            
+            <tag> 图论 </tag>
+            
+            <tag> 记忆化搜索 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>bzoj 2456 mode</title>
       <link href="/2018/10/10/bzoj%202456%20mode/"/>
       <url>/2018/10/10/bzoj%202456%20mode/</url>
@@ -633,23 +650,6 @@
             <tag> 数学 </tag>
             
             <tag> 神奇操作 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>P3916 图的遍历</title>
-      <link href="/2018/10/10/P3916%20%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"/>
-      <url>/2018/10/10/P3916%20%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</url>
-      <content type="html"><![CDATA[<p>一道图论题</p><a id="more"></a><div class="am-u-md-8 lg-right" name="problemleft"><br><div class="lg-content-left"><br><div class="lg-article am-g"><br><h2>题目描述</h2><br><p>给出$N$个点，$M$条边的有向图，对于每个点$v$，求$A(v)$表示从点$v$出发，能到达的编号最大的点。</p><br><h2>输入输出格式</h2><br><strong>输入格式：</strong><br><br><p></p><p>第1 行，2 个整数$N,M$。</p><br><p>接下来$M$行，每行2个整数$U_i,V_i$，表示边$(U_i,V_i)$。点用$1, 2,\cdots,N$编号。</p><p></p><br><strong>输出格式：</strong><br><br><p></p><p>N 个整数$A(1),A(2),\cdots,A(N)$。</p><p></p><br><h2>输入输出样例</h2><br><div class="am-g"><br><div class="am-u-md-6 copy-region"><br><strong>输入样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a><br><pre>4 3<br>1 2<br>2 4<br>4 3</pre><br></div><br><div class="am-u-md-6 copy-region"><br><strong>输出样例#1：</strong><br><a class="am-badge am-radius lg-bg-orange sample-copy">复制</a><br><pre>4 4 3 4</pre><br></div><br></div><br><h2>说明</h2><br><p>• 对于60% 的数据，$1 \le N . K \le 10^3$；</p><br><p>• 对于100% 的数据，$1 \le N , M \le 10^5$。</p><br></div><hr><h1>sol</h1><p>看到这题第一眼：</p><p> 记忆化，直接搜</p><p>然后就WA了</p><p>大概能知道某种环可以卡掉，但是不知道怎么构造以及为什么</p><p>其实是因为后搜到的没办法更新了</p><p>比如这组数据(感谢<a href="sxyugao.top">@sxyugao</a>大佬提供的hack数据，原题hack数据太大了。。。)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 3</span><br><span class="line">1 3</span><br><span class="line">1 2</span><br><span class="line">2 1</span><br></pre></td></tr></table></figure><p>所以我们反着建图，记录大的点能到哪些小的点（也就是原图小的点能到哪些大的点），从大的开始搜索，就不会存在这样的问题</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,l,r) for(int i=l;i&lt;=r;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,l,r) for(int i=l;i&gt;=r;--i)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">char</span> c;</span><br><span class="line"><span class="keyword">bool</span> t=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>((c=getchar())==<span class="string">' '</span>||c==<span class="string">'\n'</span>||c==<span class="string">'\r'</span>);</span><br><span class="line"><span class="keyword">if</span>(c==<span class="string">'-'</span>)</span><br><span class="line">&#123;</span><br><span class="line">t=<span class="number">1</span>;</span><br><span class="line">c=getchar();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)</span><br><span class="line">&#123;</span><br><span class="line">a*=<span class="number">10</span>;</span><br><span class="line">a+=(c-<span class="string">'0'</span>);</span><br><span class="line">c=getchar();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> a*(t?<span class="number">-1</span>:<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line"><span class="keyword">int</span> to,next;</span><br><span class="line">&#125;e[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> cnt,n,m;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100010</span>],last[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">const</span> <span class="keyword">int</span> st)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(a[x])</span><br><span class="line"> <span class="keyword">return</span>;</span><br><span class="line">a[x]=st;</span><br><span class="line"><span class="keyword">int</span> temp=last[x];</span><br><span class="line"><span class="keyword">while</span>(temp)</span><br><span class="line">&#123;</span><br><span class="line">dfs(e[temp].to,st);</span><br><span class="line">temp=e[temp].next;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;from,<span class="keyword">const</span> <span class="keyword">int</span> &amp;to)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">e[++cnt].to=from;</span><br><span class="line">e[cnt].next=last[to];</span><br><span class="line">last[to]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> tx,ty;</span><br><span class="line">n=read();m=read();</span><br><span class="line">rep(i,<span class="number">1</span>,m)</span><br><span class="line">&#123;</span><br><span class="line">tx=read();ty=read();</span><br><span class="line">add(tx,ty);</span><br><span class="line">&#125;</span><br><span class="line">per(i,n,<span class="number">1</span>)</span><br><span class="line"> dfs(i,i);</span><br><span class="line">rep(i,<span class="number">1</span>,n)</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h3>题外话</h3><p>图论的题还是比较玄学啊orz</p><p>不知道要怎么练习这种东西</p></div></div>]]></content>
-      
-      
-        <tags>
-            
-            <tag> 图论 </tag>
-            
-            <tag> 记忆化搜索 </tag>
             
         </tags>
       
